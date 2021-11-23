@@ -70,37 +70,37 @@
     
 2. Nettoyer les transcriptions préliminaires sur RegEx.
 
-  - Copier-coller uniquement le body du texte dans le TEST STRING du site https://regex101.com
+  1. **Copier-coller uniquement le body du texte dans le TEST STRING du site https://regex101.com**
 
-  - Supprimer les epaces à la fin de lignes, pour que chaque ligne termine avec une saute de ligne.
+  2. **Supprimer les epaces à la fin de lignes, pour que chaque ligne termine avec une saute de ligne.**
     - sélectionner les espaces avec l'expression : ( )$
     - remplacer avec rien 
 
-  - Marquer le début de chaque paragraphe avec la balise <p>.
+  3. **Marquer le début de chaque paragraphe avec la balise <p>.**
     - sélectionner le début de paragraphes avec l'expression : \n\n(^.)
     - remplacer avec : \n\n<p>$1
 
-  - Mettre manuellement la balise <p> au début du texte pour qu'il conforme au reste.
+  4. **Mettre manuellement la balise <p> au début du texte pour qu'il conforme au reste.**
 
-  - Marquer la fin de chaque paragraphe avec la balise </p>.
+  5. **Marquer la fin de chaque paragraphe avec la balise </p>.**
     - sélectionner la fin de paragraphes avec l'expression : (.)\n\n
     - remplacer avec : $1</p>\n\n
 
-  - Mettre manuellement la balise fermante </p> à la fin du dernier paragraphe pour qu'il conforme aux autres.
+  6. **Mettre manuellement la balise fermante </p> à la fin du dernier paragraphe pour qu'il conforme aux autres.**
 
-  - Standardiser les apostrophes.
+  7. **Standardiser les apostrophes.**
     - sélectionner les apostrophes spéciales avec l'expression : ’
     - remplacer avec : '
 
-  - Standardiser les espaces entre les lettres et la ponctuation.
+  8. **Standardiser les espaces entre les lettres et la ponctuation.**
     - sélectionner la ponctuation qui suit les espaces avec l'expression : \b ([\!\.\,\;\:])
     - remplacer avec : $1
 
-  - Standardiser les espaces entre les lettres et les guillemets.
+  9. **Standardiser les espaces entre les lettres et les guillemets.**
     - sélectionner les citations avec l'expression : \»\«\
 
   - Remplacer les premiers indicateurs de l'italique avec la propre balise.
-    - sélectionner le premier _ avec l'expression : (_)\B
+    - sélectionner le premier \_ avec l'expression : (\_)\B
     - remplacer avec : <hi rend="italic">
 
   - Remplacer les derniers indicateurs de l'italique avec la propre balise.
