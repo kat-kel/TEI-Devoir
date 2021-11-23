@@ -83,8 +83,8 @@
   4. **Mettre manuellement la balise <p> au début du texte pour qu'il conforme au reste.**
 
   5. **Marquer la fin de chaque paragraphe avec la balise </p>.**
-    - sélectionner la fin de paragraphes avec l'expression : (.)\n\n
-    - remplacer avec : $1</p>\n\n
+    - sélectionner la fin de paragraphes avec l'expression : (.)\\n\\n
+    - remplacer avec : $1</p>\\n\\n
 
   6. **Mettre manuellement la balise fermante </p> à la fin du dernier paragraphe pour qu'il conforme aux autres.**
 
@@ -93,16 +93,16 @@
     - remplacer avec : '
 
   8. **Standardiser les espaces entre les lettres et la ponctuation.**
-    - sélectionner la ponctuation qui suit les espaces avec l'expression : \b ([\!\.\,\;\:])
-    - remplacer avec : $1
+    - sélectionner la ponctuation qui suit les espaces avec l'expression : \\b ([\\!\\.\\,\\;\\:])
+    - remplacer avec : \$1
 
   9. **Standardiser les espaces entre les lettres et les guillemets.**
-    - sélectionner les citations avec l'expression : \»\«\
+    - sélectionner les citations avec l'expression : \\»\\«\\
 
   - Remplacer les premiers indicateurs de l'italique avec la propre balise.
     - sélectionner le premier \_ avec l'expression : (\_)\B
-    - remplacer avec : <hi rend="italic">
+    - remplacer avec : \<hi rend="italic">
 
   - Remplacer les derniers indicateurs de l'italique avec la propre balise.
     - sélectionner le _ restant qui doit forcement être à la fin avec l'expression : (_)
-    - remplacer avec : </hi>
+    - remplacer avec : \</hi>
