@@ -72,8 +72,8 @@
 
 | Ordre | Objectif | Sélecteur | Remplaçant |
 |:-----:|:---------|:---------:|:----------:|
-| 1 | Supprimer les espaces à la fin de lignes | ```(∅)$``` | _rien_ |
-| 2 | Marquer le début de chaque paragraphe avec la balise ```\<p>``` | ```\\n\\n(^.)``` | ```\\n\\n\<p>$1``` |
-| 3 | Mettre manuellement la balise ```\<p>``` au début du texte |
-| 4 | Marquer la fin de chaque paragraphe avec la balise ```\</p>``` | (.)\\n\\n | $1\</p>\\n\\n 
+| 1 | Supprimer les espaces à la fin de lignes | ```( )$``` | _rien_ |
+| 2 | Marquer le début de chaque paragraphe avec la balise ```<p>``` | ```\n\n(^.)``` | ```\n\n<p>$1``` |
+| 3 | Mettre manuellement la balise ```<p>``` au début du texte |
+| 4 | Marquer la fin de chaque paragraphe avec la balise ```</p>``` | ```(.)\n\n``` | ```$1</p>\n\n``` | 
 
