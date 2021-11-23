@@ -76,13 +76,13 @@
     - sélectionner les espaces avec l'expression : ( )$
     - remplacer avec rien 
 
-  3. **Marquer le début de chaque paragraphe avec la balise <p>.**
+  3. **Marquer le début de chaque paragraphe avec la balise \<p>.**
     - sélectionner le début de paragraphes avec l'expression : \n\n(^.)
     - remplacer avec : \n\n<p>$1
 
-  4. **Mettre manuellement la balise <p> au début du texte pour qu'il conforme au reste.**
+  4. **Mettre manuellement la balise \<p> au début du texte pour qu'il conforme au reste.**
 
-  5. **Marquer la fin de chaque paragraphe avec la balise </p>.**
+  5. **Marquer la fin de chaque paragraphe avec la balise \</p>.**
     - sélectionner la fin de paragraphes avec l'expression : (.)\\n\\n
     - remplacer avec : $1</p>\\n\\n
 
