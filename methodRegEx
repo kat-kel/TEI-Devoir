@@ -33,7 +33,7 @@ méthode
 - remplacer avec : $1
 
 8. Remplacer les premiers indicateurs de l'italique avec la propre balise.
-- sélectionner le premier _ avec l'expression : \b(_)
+- sélectionner le premier _ avec l'expression : (_)\B
 - remplacer avec : <hi rend="italic">
 
 9. Remplacer les derniers indicateurs de l'italique avec la propre balise.
