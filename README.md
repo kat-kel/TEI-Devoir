@@ -72,7 +72,7 @@
 
 | Ordre | Objectif | Sélecteur | Remplaçant |
 |:-----:|:---------|:---------:|:----------:|
-| 1 | Supprimer les espaces à la fin de lignes | ( )$ | _rien_ |
-| 2 | Marquer le début de chaque paragraphe avec la balise \<p> | \\n\\n(^.) |
+| 1 | Supprimer les espaces à la fin de lignes | (\ )$ | _rien_ |
+| 2 | Marquer le début de chaque paragraphe avec la balise \<p> | \\n\\n(^.) | \\m\\n\<p>$1 |
 
 
