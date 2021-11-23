@@ -65,52 +65,44 @@
 1. En lisant les images de texte, corriger à la main les fichiers de texte automatisés.
 
   - Méthode de corréction :
-    - marquer les mots en italique avec __l'underscore__
-    - garder les coquilles, en les marquant avec [sic]
+    - marquer les mots en italique avec \_l'underscore_
+    - garder les coquilles, en les marquant avec \[sic]
     
 2. Nettoyer les transcriptions préliminaires sur RegEx.
 
   - Copier-coller uniquement le body du texte dans le TEST STRING du site https://regex101.com
 
   - Supprimer les epaces à la fin de lignes, pour que chaque ligne termine avec une saute de ligne.
-    - méthode :
-      - sélectionner les espaces avec l'expression : ( )$
-      - remplacer avec rien 
+    - sélectionner les espaces avec l'expression : ( )$
+    - remplacer avec rien 
 
   - Marquer le début de chaque paragraphe avec la balise <p>.
-    - méthode :
-      - sélectionner le début de paragraphes avec l'expression : \n\n(^.)
-      - remplacer avec : \n\n<p>$1
+    - sélectionner le début de paragraphes avec l'expression : \n\n(^.)
+    - remplacer avec : \n\n<p>$1
 
   - Mettre manuellement la balise <p> au début du texte pour qu'il conforme au reste.
 
   - Marquer la fin de chaque paragraphe avec la balise </p>.
-    - méthode :
-      - sélectionner la fin de paragraphes avec l'expression : (.)\n\n
-      - remplacer avec : $1</p>\n\n
+    - sélectionner la fin de paragraphes avec l'expression : (.)\n\n
+    - remplacer avec : $1</p>\n\n
 
   - Mettre manuellement la balise fermante </p> à la fin du dernier paragraphe pour qu'il conforme aux autres.
 
   - Standardiser les apostrophes.
-    - méthode :
-      - sélectionner les apostrophes spéciales avec l'expression : ’
-      - remplacer avec : '
+    - sélectionner les apostrophes spéciales avec l'expression : ’
+    - remplacer avec : '
 
   - Standardiser les espaces entre les lettres et la ponctuation.
-    - méthode :
-      - sélectionner la ponctuation qui suit les espaces avec l'expression : \b ([\!\.\,\;\:])
-      - remplacer avec : $1
+    - sélectionner la ponctuation qui suit les espaces avec l'expression : \b ([\!\.\,\;\:])
+    - remplacer avec : $1
 
   - Standardiser les espaces entre les lettres et les guillemets.
-    - méthode :
-      - sélectionner les citations avec l'expression : \»\«\
+    - sélectionner les citations avec l'expression : \»\«\
 
   - Remplacer les premiers indicateurs de l'italique avec la propre balise.
-    - méthode :
-      - sélectionner le premier _ avec l'expression : (_)\B
-      - remplacer avec : <hi rend="italic">
+    - sélectionner le premier _ avec l'expression : (_)\B
+    - remplacer avec : <hi rend="italic">
 
   - Remplacer les derniers indicateurs de l'italique avec la propre balise.
-    - méthode :
-      - sélectionner le _ restant qui doit forcement être à la fin avec l'expression : (_)
-      - remplacer avec : </hi>
+    - sélectionner le _ restant qui doit forcement être à la fin avec l'expression : (_)
+    - remplacer avec : </hi>
