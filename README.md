@@ -29,15 +29,15 @@
 		- Présenter en introduction votre projet et ses exploitations possibles (/3) ;
 		- Documenter le fonctionnement de votre encodage et vos choix de balises (/3).
     
-## Méthode
+# Méthode
 
-### 1. Télécharger les images de texte.
+## 1. Télécharger les images de texte.
 
 1. Sélectionner et télécharger le feuilleton en haut résolution (jpg).
 
 2. Stocker ces images sous ```data/images```.
  
-### 2. Traduire les images de texte en fichiers de texte (Tesseract OCR).
+## 2. Traduire les images de texte en fichiers de texte (Tesseract OCR).
 
 1. [Suivre les instruction d'installation](https://tesseract-ocr.github.io/tessdoc/Installation.html).
 
@@ -60,7 +60,7 @@
   - pour créer un fichier pdf searchable :
     ```CHEMIN_AppImage/tesseract*.AppImage -l fra CHEMIN_image.jpg CHEMIN_fichier pdf```
 
-### 3. Nettoyer les fichiers de texte.
+## 3. Nettoyer les fichiers de texte.
 
 1. En lisant les images de texte, corriger à la main les fichiers de texte automatisés.
 
@@ -70,39 +70,9 @@
     
 2. Nettoyer les transcriptions préliminaires sur RegEx.
 
-  1. **Copier-coller uniquement le body du texte dans le TEST STRING du site https://regex101.com**
+| Ordre | Objectif | Sélecteur | Remplaçant |
+|:-----:|:---------|:---------:|:----------:|
+| 1 | Supprimer les espaces à la fin de lignes | ( )$ | _rien_ |
+| 2 | Marquer le début de chaque paragraphe avec la balise \<p> | \\n\\n(^.) |
 
-  2. **Supprimer les epaces à la fin de lignes, pour que chaque ligne termine avec une saute de ligne.**
-    - sélectionner les espaces avec l'expression : ( )$
-    - remplacer avec rien 
 
-  3. **Marquer le début de chaque paragraphe avec la balise \<p>.**
-    - sélectionner le début de paragraphes avec l'expression : \n\n(^.)
-    - remplacer avec : \n\n<p>$1
-
-  4. **Mettre manuellement la balise \<p> au début du texte pour qu'il conforme au reste.**
-
-  5. **Marquer la fin de chaque paragraphe avec la balise \</p>.**
-    - sélectionner la fin de paragraphes avec l'expression : (.)\\n\\n
-    - remplacer avec : $1</p>\\n\\n
-
-  6. **Mettre manuellement la balise fermante </p> à la fin du dernier paragraphe pour qu'il conforme aux autres.**
-
-  7. **Standardiser les apostrophes.**
-    - sélectionner les apostrophes spéciales avec l'expression : ’
-    - remplacer avec : '
-
-  8. **Standardiser les espaces entre les lettres et la ponctuation.**
-    - sélectionner la ponctuation qui suit les espaces avec l'expression : \\b ([\\!\\.\\,\\;\\:])
-    - remplacer avec : \$1
-
-  9. **Standardiser les espaces entre les lettres et les guillemets.**
-    - sélectionner les citations avec l'expression : \\»\\«\\
-
-  - Remplacer les premiers indicateurs de l'italique avec la propre balise.
-    - sélectionner le premier \_ avec l'expression : (\_)\B
-    - remplacer avec : \<hi rend="italic">
-
-  - Remplacer les derniers indicateurs de l'italique avec la propre balise.
-    - sélectionner le _ restant qui doit forcement être à la fin avec l'expression : (_)
-    - remplacer avec : \</hi>
