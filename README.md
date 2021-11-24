@@ -54,11 +54,10 @@
   - chemin d'image à traite --> CHEMIN_image
   - chemin d'où se placera le nouveau fichier --> CHEMIN_fichier
   - pour créer un fichier txt :
-
-   CHEMIN_AppImage``` -l fra ```CHEMIN_image.jpg``` ```CHEMIN_fichier
+   > CHEMIN_AppImage``` -l fra ```CHEMIN_image.jpg``` ```CHEMIN_fichier
     
   - pour créer un fichier pdf searchable :
-    CHEMIN_AppImage``` -l fra ```CHEMIN_image.jpg``` ```CHEMIN_fichier``` pdf```
+   > CHEMIN_AppImage``` -l fra ```CHEMIN_image.jpg``` ```CHEMIN_fichier``` pdf```
 
 ## 3. Nettoyer les fichiers de texte.
 
