@@ -55,6 +55,7 @@
   - chemin d'où se placera le nouveau fichier --> CHEMIN_fichier
   - pour créer un fichier txt :
    > CHEMIN_AppImage -l fra CHEMIN_image.jpg CHEMIN_fichier
+ 
    > ex. ```Applications/tesseract\*AppImage -l fra ~/Documents/XML/Devoir/data/images/19_janvier_1.jpg ~/Documents/XML/Devoir/data/transcriptionPreliminaire/19_janvier_1```
     
   - pour créer un fichier pdf searchable :
