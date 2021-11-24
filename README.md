@@ -35,7 +35,7 @@
 
 1. Sélectionner et télécharger le feuilleton en haut résolution (jpg).
 
-2. Stocker ces images sous ```data/images```.
+2. Stocker ces images sous [data/images](https://github.com/kat-kel/TEI-Devoir/tree/main/data/images).
  
 ## 2. Traduire les images de texte en fichiers de texte (Tesseract OCR).
 
@@ -50,13 +50,13 @@
   ```chmod a+x tesseract*.AppImage```
 
 2. Démarrer Tesseract sur les images de texte.
-  - _noter le chemin de tesseract*.AppImage_ (CHEMIN_AppImage)
-  - _noter le chemin d'image à traiter_ (CHEMIN_image)
-  - _noter le chemin d'où se placera le nouveau fichier_ (CHEMIN_fichier)
+  - chemin de l'application tesseract*.AppImage installée <span style="color: #ff3371">CHEMIN_AppImage</span>
+  - chemin d'image à traite <span style="color: #8a33ff">CHEMIN_image</span>
+  - chemin d'où se placera le nouveau fichier <span style="color: #fcb13e">CHEMIN_fichier</span>
   - pour créer un fichier txt :
 
-    ```CHEMIN_AppImage/tesseract*.AppImage -l fra CHEMIN_image.jpg CHEMIN_fichier```
-
+    <span style="color: #ff3371">CHEMIN_AppImage</span>```/tesseract*.AppImage -l fra ```<span style="color: #8a33ff">CHEMIN_image.jpg</span>``` ```<span style="color: #fcb13e">CHEMIN_fichier</span>
+    
   - pour créer un fichier pdf searchable :
     ```CHEMIN_AppImage/tesseract*.AppImage -l fra CHEMIN_image.jpg CHEMIN_fichier pdf```
 
