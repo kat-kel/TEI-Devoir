@@ -50,15 +50,16 @@
   ```chmod a+x tesseract*.AppImage```
 
 2. Démarrer Tesseract sur les images de texte.
-  - chemin de l'application tesseract*.AppImage installée --> CHEMIN_AppImage
+  - chemin de l'application tesseract*.AppImage installée --> CHEMIN_App
   - chemin d'image à traite --> CHEMIN_image
   - chemin d'où se placera le nouveau fichier --> CHEMIN_fichier
-  - pour créer un fichier txt : CHEMIN_AppImage -l fra CHEMIN_image.jpg CHEMIN_fichier
+  - pour créer un fichier txt : CHEMIN_App -l fra CHEMIN_image.jpg CHEMIN_fichier
   - exemple :
    ```Applications/tesseract\*AppImage -l fra ~/Documents/XML/Devoir/data/images/19_janvier_1.jpg ~/Documents/XML/Devoir/data/transcriptionPreliminaire/19_janvier_1```
     
-  - pour créer un fichier pdf searchable :
-   > CHEMIN_AppImage``` -l fra ```CHEMIN_image.jpg``` ```CHEMIN_fichier``` pdf```
+  - pour créer un fichier pdf searchable : CHEMIN_App -l fra CHEMIN_image CHEMIN_fichier pdf
+  - exemple :
+  ```Applications/tesseract\*AppImage -l fra ~/Documents/XML/Devoir/data/images/19_janvier_1.jpg ~/Documents/XML/Devoir/data/transcriptionPreliminaire/19_janvier_1 pdf```
 
 ## 3. Nettoyer les fichiers de texte.
 
