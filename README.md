@@ -50,14 +50,14 @@
   ```chmod a+x tesseract*.AppImage```
 
 2. Démarrer Tesseract sur les images de texte.
-  - chemin de l'application tesseract*.AppImage installée --> CHEMIN_App
-  - chemin d'image à traite --> CHEMIN_image
-  - chemin d'où se placera le nouveau fichier --> CHEMIN_fichier
-  - pour créer un fichier txt : CHEMIN_App -l fra CHEMIN_image.jpg CHEMIN_fichier
+  - chemin de l'application tesseract*.AppImage installée --> APPLICATION
+  - chemin d'image à traite --> IMAGE
+  - chemin d'où se placera le nouveau fichier --> FICHIER
+  - pour créer un fichier txt : APPLICATION -l fra IMAGE FICHIER
   - exemple :
    ```Applications/tesseract*AppImage -l fra ~/Documents/XML/Devoir/data/images/19_janvier_1.jpg ~/Documents/XML/Devoir/data/transcriptionPreliminaire/19_janvier_1```
     
-  - pour créer un fichier pdf searchable : CHEMIN_App -l fra CHEMIN_image CHEMIN_fichier pdf
+  - pour créer un fichier pdf searchable : APPLICATION -l fra IMAGE FICHIER pdf
   - exemple :
   ```Applications/tesseract*AppImage -l fra ~/Documents/XML/Devoir/data/images/19_janvier_1.jpg ~/Documents/XML/Devoir/data/transcriptionPreliminaire/19_janvier_1 pdf```
 
