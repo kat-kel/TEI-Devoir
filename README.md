@@ -30,4 +30,4 @@
 		- Documenter le fonctionnement de votre encodage et vos choix de balises (/3).
     
 # Méthode
-
+...
