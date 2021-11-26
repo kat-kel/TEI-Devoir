@@ -1,7 +1,7 @@
 import re
 
 # fichier texte
-DOC = "data/XMLeScriptorium/19_janvier_1.txt"
+DOC = "transcriptions/19_janvier_1.txt"
 
 lines = 0
 
