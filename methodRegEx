@@ -1,3 +1,5 @@
+Méthode de nettoyer le texte brut
+
 0. Copier-coller uniquement le body du texte dans le TEST STRING du site https://regex101.com
 
 1. Supprimer les epaces à la fin de lignes,
@@ -29,13 +31,18 @@ méthode
 
 7. Standardiser les espaces entre les lettres et la ponctuation.
 méthode
-- sélectionner la ponctuation qui suit les espaces avec l'expression : \b ([\!\.\,\;])
+- sélectionner la ponctuation qui suit les espaces avec l'expression : \b ([\!\.\,\;\:])
 - remplacer avec : $1
 
+8. Standardiser les espaces entre les lettres et les guillemets.
+\»\«\
+
 8. Remplacer les premiers indicateurs de l'italique avec la propre balise.
-- sélectionner le premier _ avec l'expression : \b(_)
+- sélectionner le premier _ avec l'expression : (_)\B
 - remplacer avec : <hi rend="italic">
 
 9. Remplacer les derniers indicateurs de l'italique avec la propre balise.
 - sélectionner le _ restant qui doit forcement être à la fin avec l'expression : (_)
 - remplacer avec : </hi>
+
+
