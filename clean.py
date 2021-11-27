@@ -12,8 +12,8 @@ DOC = 'transcriptions/modifications.txt'
 # liste d'expressions régulières souhaitées
 BAD_APOSTROPHE = re.compile(r"’") # le mauvais unicode pour l'apostrophe standardisée, U+2019
 GOOD_APOSTROPHE = "'" # le bon unicode pour l'apostrophe, unicode U+0027
-BAD_PUNCTUATION_TWO_PART_START = re.compile(r"([\«\»\!\?\%\$\#])\b") # les signes de ponctuation doubles au début
-BAD_PUNCTUATION_TWO_PART_END = re.compile(r"\b([\«\»\!\?\%\$\#])") # les signes de ponctuation doubles à la fin
+BAD_PUNCTUATION_TWO_PART_START = re.compile(r"([\:\;\«\»\!\?\%\$\#])\b") # les signes de ponctuation doubles au début
+BAD_PUNCTUATION_TWO_PART_END = re.compile(r"\b([\:\;\«\»\!\?\%\$\#])") # les signes de ponctuation doubles à la fin
 FIX_PUNCTUATION_TWO_PART = " "
 PUNCTUATION_SIMPLE = re.compile(r"\b[\.\,]") #les signes de ponctuation simples
 FIX_PUNCTUATION_SIMPLE = ""
