@@ -35,10 +35,15 @@
 
 1. Télécharger une image JPEG en haute résolution de Gallica qui extrait uniquement le contenu du feuilleton.
 	* Cette méthode est conseillée parce que la qualité d'image du périodique, même si elle sorte de l'IIIF, est trop faible pour être bien lue par le logiciel eScriptorium.
-2. Transformer le JPEG en PDF. (J'ai utilisé le logiciel Tesseract.)
-3. Transcrire dans eScriptorium le fichier PDF, selon les normes ci-dessous, et sortir la transcription d'un format TEXT.
+2. Transformer le JPEG en PDF. (Moi, j'ai utilisé le logiciel Tesseract, en particulier sa fonction ```... -l fra ... pdf```)
+3. Transcrire dans eScriptorium le fichier PDF, selon les normes ci-dessous.
 	* Pour toute occurence de mots en italique, elle est entournée par un double underscore, "\__\\_exemple_\__"
 	* Si le texte imprimé présente un erreur typographique bien lisible, il est conservé et il est suivi par \[sic], mais les erreurs orthographiques ne sont pas marqués
 	* Si le texte imprimé manque un mot ou une lettre attendu, il est ajouté entre crochets, "C'es\[t] fait."
-4. Passer cette transcription brute dans le programme que j'ai écrit qui s'appelle 'clean.py'
+4. Sortir d'eScriptorium un fichier TEXT.
+5. Passer cette transcription brute dans le programme que j'ai écrit qui s'appelle 'clean.py'
 	* Ce programme python a besoin de pacquets ```re``` et ```click```
+	* Il envoie un fichier texte nettoyé et légèrement formatté qui s'appelle 'transcription-NOM'.txt à la suite d'une commande dans le terminal ```python clean.py [NOM]```
+	* Si le programme clean.py se trouve dans un dossier DOSSIER, il faut respecter les deux points suivants :
+		* Le fichier à traiter doit se trouver dans un sous-dossier : DOSSIER/data/XMLeScriptorium/
+		* La sortie du programme doit être envoyé vers un dossier : DOSSIER/transcriptions/
