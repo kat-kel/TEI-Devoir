@@ -1,7 +1,9 @@
 import re
+import click
 
-DOC = '19_janvier_1'
-
+@click.command()
+@click.option('--fichier', help='entrez le nom de fichier texte brut à formatter, sans le .txt')
+@click.argument('fichier')
 def main():
     """
     DOCUMENTATION :
@@ -28,12 +30,12 @@ def main():
     """
     
     # identifier le chemin du fichier de départ ; ne le modifiez pas ! ce fichier sera ouvert uniquement dans un mode de lecture
-    original = 'data/XMLeScriptorium/{}.txt'.format(DOC)
+    original = 'data/XMLeScriptorium/{}.txt'.format(fichier)
     # transformer le fichier où se trouve la transcription originale en un objet itérable, ce qui s'appelle le 'reader' 
     reader = read_file(original)
 
     # identifier le chemin du fichier où le texte modifié se trouvera
-    version = 'transcriptions/{}.txt'.format(DOC) 
+    version = 'transcriptions/{}.txt'.format(fichier) 
     # préparer le nouveau fichier en supprimant les anciennes modifications s'il y en a dans le fichier, pour qu'il soit vide au début de la fonction
     version = empty_version(version)
 
