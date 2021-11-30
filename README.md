@@ -35,7 +35,7 @@
 
 1. Télécharger une image JPEG en haute résolution de Gallica qui extrait uniquement le contenu du feuilleton.
 	* Cette méthode est conseillée parce que la qualité d'image du périodique, même si elle sorte de l'IIIF, est trop faible pour être bien lue par le logiciel eScriptorium.
-2. Transformer le JPEG en PDF. (Moi, j'ai utilisé le logiciel Tesseract, en particulier sa fonction ```... -l fra ... pdf```)
+2. Transformer le JPEG en PDF. (Moi, j'ai utilisé le logiciel Tesseract)
 3. Transcrire dans eScriptorium le fichier PDF, selon les normes ci-dessous.
 	* Pour toute occurence de mots en italique, elle est entournée par un double underscore, "\__\\_exemple_\__"
 	* Si le texte imprimé présente un erreur typographique bien lisible, il est conservé et il est suivi par \[sic], mais les erreurs orthographiques ne sont pas marqués
