@@ -4,7 +4,7 @@ import click
 @click.command()
 @click.option('--fichier', help='entrez le nom de fichier texte brut à formatter, sans le .txt')
 @click.argument('fichier')
-def main():
+def main('fichier'):
     """
     DOCUMENTATION :
 	    La fonction main prend un fichier texte et renvoie une version modifiée vers un nouveau chemin, afin de conserver la version originale. Les modifications ont pour but de nettoyer le texte et de le rendre en conformité.
@@ -13,7 +13,8 @@ def main():
 		| contre-partie de celle que j’ai surprise à la __Ré-
 		| serve__. Il paraît que je suis destiné à m’emparer,
 
-	    En outre certains moyens de marquer des coquilles dans la source transcrite doivent conformer aux deux règles suivantes. (1) Les expressions dont le mot ou la lettre est corrumpu sont corrigées en plaçant la correction entre crochets []. Le texte envoyé vers cette fonction devrait corriger uniquement les mots et les lettres illisbles, et pas les mauvaises orthographes.
+	    En outre certains moyens de marquer des coquilles dans la source transcrite doivent conformer aux deux règles suivantes.
+		(1) Les expressions dont le mot ou la lettre est corrumpu sont corrigées en plaçant la correction entre crochets []. Le texte envoyé vers cette fonction devrait corriger uniquement les mots et les lettres illisbles, et pas les mauvaises orthographes.
 		| — Il n’y a rien là pour la [vue], continua le ci-
 		# Dans cet exemple ci-dessus, le mot 'vue' devrait être présente dans la phrase mais il n'était pas lisible dans la source.
 	    (2) Les expressions dont une coquille est bien lisible dans la source sont suivies par le mot latin 'sic' entre crochets.
@@ -56,7 +57,7 @@ dictPattern = {
     'space missing between two-part punctuation and word': re.compile(r"([\:\;\«\!\?\%\$\#])\b"),
     'space missing between word and two-part punctuation': re.compile(r"\b([\:\;\»\!\?\%\$\#])"),
     'extra space before simple punctuation': re.compile(r"\s[\.\,]"),
-    'double underscore and content between': re.compile(r"(__)(.+)(__)"), # (groupe 1 de l'objet de correspondance: premier underscore)(groupe 2 de l'objet de correspondance: contenu en italique)(groupe 3 de l'objet de correspondance: deuxième underscore)
+    'double underscore and content between': re.compile(r"(__)([^__]+)(__)"), # (groupe 1 de l'objet de correspondance: premier underscore)(groupe 2 de l'objet de correspondance: contenu en italique)(groupe 3 de l'objet de correspondance: deuxième underscore)
     'continuing italic word at end of line': re.compile(r"(__)(.+)"), # (groupe 1 de l'objet de correspondance: premier underscore)(groupe 2 de l'objet de correspondance: contenu en italique)
     'continued italic word at start of line': re.compile(r"(.+)(__)"), # (groupe 1 de l'objet de correspondance: contenu en italique)(groupe 2 de l'objet de correspondance: dernier underscore)
     'sic in brackets': re.compile(r"(\S+)(\[sic\])"), # (groupe 1 de l'objet de correspondance: le contenu avant le marqueur [sic])(groupe 2 de l'objet de correspondance: les crochets [sic])
