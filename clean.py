@@ -4,7 +4,7 @@ import click
 @click.command()
 @click.option('--fichier', help='entrez le nom de fichier texte brut à formatter, sans le .txt')
 @click.argument('fichier')
-def main('fichier'):
+def main(fichier):
     """
     DOCUMENTATION :
 	    La fonction main prend un fichier texte et renvoie une version modifiée vers un nouveau chemin, afin de conserver la version originale. Les modifications ont pour but de nettoyer le texte et de le rendre en conformité.
