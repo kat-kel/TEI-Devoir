@@ -4,7 +4,7 @@ import click
 @click.command()
 @click.option('--fichier', help='entrez le nom de fichier texte brut à formatter, sans le .txt')
 @click.argument('fichier')
-def main('fichier'):
+def main(fichier):
     """
     DOCUMENTATION :
 	    La fonction main prend un fichier texte et renvoie une version modifiée vers un nouveau chemin, afin de conserver la version originale. Les modifications ont pour but de nettoyer le texte et de le rendre en conformité.
@@ -31,12 +31,12 @@ def main('fichier'):
     """
     
     # identifier le chemin du fichier de départ ; ne le modifiez pas ! ce fichier sera ouvert uniquement dans un mode de lecture
-    original = 'data/XMLeScriptorium/{}.txt'.format(fichier)
+    original = 'data/in_eScriptorium/{}.txt'.format(fichier)
     # transformer le fichier où se trouve la transcription originale en un objet itérable, ce qui s'appelle le 'reader' 
     reader = read_file(original)
 
     # identifier le chemin du fichier où le texte modifié se trouvera
-    version = 'transcriptions/{}.txt'.format(fichier) 
+    version = 'data/out_transcription/{}.txt'.format(fichier) 
     # préparer le nouveau fichier en supprimant les anciennes modifications s'il y en a dans le fichier, pour qu'il soit vide au début de la fonction
     version = empty_version(version)
 
