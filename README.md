@@ -2,7 +2,7 @@
 
 [Consignes de l'évaluation : github.com/Segolene-Albouy](https://github.com/Segolene-Albouy/XML-TEI_M2TNAH/blob/main/ConsignesEvaluation.md)
 
-#### Sujet — Roman feuilleton : [Georges Sand, *Daniella*, La Presse](https://gallica.bnf.fr/html/und/presse-et-revues/la-daniella?mode=desktop)
+#### Sujet — Roman feuilleton : [George Sand, *Daniella*, La Presse](https://gallica.bnf.fr/html/und/presse-et-revues/la-daniella?mode=desktop)
 
 * Télécharger le texte via l’interface de Gallica ;
 * Nettoyer le texte (doubles espaces, problème sur les caractères accentués, coquilles…) ;
@@ -34,16 +34,11 @@
 ## Nettoyer le texte
 
 1. Télécharger une image JPEG en haute résolution de Gallica qui extrait uniquement le contenu du feuilleton.
-	* Cette méthode est conseillée parce que la qualité d'image du périodique, même si elle sorte de l'IIIF, est trop faible pour être bien lue par le logiciel eScriptorium.
 2. Transformer le JPEG en PDF. (Moi, j'ai utilisé le logiciel Tesseract)
 3. Transcrire dans eScriptorium le fichier PDF, selon les normes ci-dessous.
-	* Pour toute occurence de mots en italique, elle est entournée par un double underscore, "\__\\_exemple_\__"
-	* Si le texte imprimé présente un erreur typographique bien lisible, il est conservé et il est suivi par \[sic], mais les erreurs orthographiques ne sont pas marqués
-	* Si le texte imprimé manque un mot ou une lettre attendu, il est ajouté entre crochets, "C'es\[t] fait."
-4. Sortir d'eScriptorium un fichier TEXT.
-5. Passer cette transcription brute dans le programme que j'ai écrit qui s'appelle 'clean.py'
+	* Documenter tout occurence de mot en italique et de coquille
+4. Sortir d'eScriptorium un fichier TEXT et le stocker dans ```data/in_transcription```.
+5. Passer cette transcription préliminaire dans le programme que j'ai écrit qui s'appelle 'clean.py'
 	* Ce programme python a besoin de pacquets ```re``` et ```click```
-	* Il envoie un fichier texte nettoyé et légèrement formatté qui s'appelle 'transcription-NOM'.txt à la suite d'une commande dans le terminal ```python clean.py [NOM]```
-	* Si le programme clean.py se trouve dans un dossier DOSSIER, il faut respecter les deux points suivants :
-		* Le fichier à traiter doit se trouver dans un sous-dossier : DOSSIER/data/XMLeScriptorium/
-		* La sortie du programme doit être envoyé vers un dossier : DOSSIER/transcriptions/
+	* Il envoie un fichier texte nettoyé et légèrement formatté en XML dans un sous-dossier ```data/out_transcription``` à la suite d'une commande dans le terminal ```python clean.py [NOM]``` où NOM est la partie unique dans le nom du fichier.
+	* exemple : depuis le dossier principal ```python clean.py 19_janvier_1``` prend le fichier data/in_transcription/19_janvier_1.txt et sort le fichier data/out_transcription/19_janvier_1.txt
