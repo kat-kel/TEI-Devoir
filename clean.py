@@ -1,33 +1,38 @@
-import re
-import click
-from mypythonlibrary.mylibrary.dictlibraries import dictPattern, dictString, format_forename, format_fullName, format_placeName, format_surname
+from mypythonlibrary.mylibrary.generalFormatting import basic_clean, xml_elements, tag_paragraph
+from mypythonlibrary.mylibrary.nameFormatting import format_name
 
-@click.command()
-@click.option('--fichier', help='entrez le nom de fichier texte brut à formatter, sans le .txt')
-@click.argument('fichier')
-def main(fichier):
+def main():
     """DOCUMENTATION :
-	    La fonction main prend un fichier texte et renvoie une version modifiée vers un nouveau chemin, afin de conserver la version originale. Les modifications ont pour but de nettoyer le texte et de le rendre en conformité.
+	    La fonction 'main' prend un fichier texte et renvoie une version modifiée vers un nouveau chemin, afin de conserver la version originale. Les modifications ont pour but de nettoyer le texte et de le rendre en conformité.
 
-	    Le texte entrée dans la fonction doit conformer au modèle décrit dessous. Notamment il aura des diacritiques d'une langue latin et il gardera des sauts de ligne. Les mots en italique doivent être marqués devant et derrière par deux underscores. Si une expression en italique traverse plusieurs lignes, l'underscore fermant doit apparaître à la fin de l'expression, donc pas à la fin de ligne si le mot continue à la prochaine.
-		| contre-partie de celle que j’ai surprise à la __Ré-
-		| serve__. Il paraît que je suis destiné à m’emparer,
+        paramètres :
+            fichier == le fichier TXT à formatter
 
-	    En outre certains moyens de marquer des coquilles dans la source transcrite doivent conformer aux deux règles suivantes.
-		(1) Les expressions dont le mot ou la lettre est corrumpu sont corrigées en plaçant la correction entre crochets []. Le texte envoyé vers cette fonction devrait corriger uniquement les mots et les lettres illisbles, et pas les mauvaises orthographes.
-		| — Il n’y a rien là pour la [vue], continua le ci-
-		# Dans cet exemple ci-dessus, le mot 'vue' devrait être présente dans la phrase mais il n'était pas lisible dans la source.
-	    (2) Les expressions dont une coquille est bien lisible dans la source sont suivies par le mot latin 'sic' entre crochets.
-		| huttes de paille, assez vastes pour abriter.[sic] la
-		# Dans cet exemple ci-dessus, le point suivi par [sic] a été imprimé en erreur, mais cet erreur est conservé dans la transcription envoyé vers cette fonction."""
+        sortie : un fichier TXT
+
+	    Note : Le texte doit conformer au modèle décrit ci-dessous :
+        (1) La transcription doit être déjà traité par deux expressions régulières dans un éditeur de texte :
+            Premièrement, pour fusionner des mots divisés à la fin d'une ligne, sélectionner (-)\n et le remplacer avec rien.
+            Deuxièment, pour fusionner des phrases qui traversent des lignes, sélectionner (\b|[__]|\,|\;)\n et le remplacer avec $1•
+            Mais si le texte d'origine n'a pas d'espaces pour diviser des paragraphes--comme ceux qui sortent de l'eScriptorium--cette méthode se trompera sur les phrases qui commencent une ligne mais pas un nouveau paragraphe. Il faut donc vérifier avec l'image transcrite que les lignes de texte représentent les paragraphes.
+        (2) La transcription aura des diacritiques d'une langue latin.
+        (2) Les mots en italique doivent être marqués devant et derrière par deux underscores.
+            | ... contre-partie de celle que j’ai surprise à la __Réserve__.
+        (3) Les expressions dont le mot ou la lettre est corrumpu sont corrigées en plaçant la correction entre crochets []. Le texte envoyé vers cette fonction devrait corriger uniquement les mots et les lettres illisbles, et pas les mauvaises orthographes.
+            | — Il n’y a rien là pour la [vue], ...
+            # Dans cet exemple ci-dessus, le mot 'vue' devrait être présente dans la phrase mais il n'était pas lisible dans la source.
+	    (4) Les expressions dont une coquille est bien lisible dans la source sont suivies par le mot latin [sic].
+            | ... huttes de paille, assez vastes pour abriter.[sic]
+            # Dans cet exemple ci-dessus, le point suivi par [sic] a été imprimé en erreur, mais cet erreur est conservé dans la transcription envoyé vers cette fonction.
+             """
     
     # identifier le chemin du fichier de départ ; ne le modifiez pas ! ce fichier sera ouvert uniquement dans un mode de lecture
-    original = 'data/in_transcription/{}.txt'.format(fichier)
-    # transformer le fichier où se trouve la transcription originale en un objet itérable, ce qui s'appelle le 'reader' 
+    original = 'data/in_transcription/full_text.txt'
+    # transformer le fichier en un objet itérable, ce qui s'appelle le 'reader' 
     reader = read_file(original)
 
     # identifier le chemin du fichier où le texte modifié se trouvera
-    version = 'data/out_transcription/{}.txt'.format(fichier) 
+    version = 'data/out_transcription/full_text.xml' 
     # préparer le nouveau fichier en supprimant les anciennes modifications s'il y en a dans le fichier, pour qu'il soit vide au début de la fonction
     version = empty_version(version)
 
@@ -35,85 +40,16 @@ def main(fichier):
     with open(version, 'w', encoding='utf8') as f:
         for line in reader:
             # nettoyer la ligne
-            clean_line = basic_clean(line)
+            line = basic_clean(line)
             # formatter la ligne selon
-            formatted_line = xml_elements(clean_line)
+            line = xml_elements(line)
             # formatter les occurences des noms
-            formatted_line = format_forename('Daniella', formatted_line)
-            formatted_line = format_forename('Medora', formatted_line)
-            formatted_line = format_forename('Harriet', formatted_line)
-            formatted_line = format_surname('Lord B', formatted_line)
-            formatted_line = format_surname('Lady B', formatted_line)
-            formatted_line = format_fullName('Valreg', formatted_line)
-            formatted_line = format_placeName('Frascati', formatted_line)
-            formatted_line = format_placeName('Rome', formatted_line)
-            formatted_line = format_placeName('Tartaglia', formatted_line)
+            names = ['Daniella', 'Medora', 'Harriet', 'Lord B', 'Lady B', 'Valreg', 'Frascati', 'Rome', 'Tartaglia']
+            for item in names:
+                line = format_name(item, line)
+            line = tag_paragraph(line)
             # écrire la ligne modifié dans le fichier ouvert en mode d'écriture 'version'
-            f.write(formatted_line)
-
-def basic_clean(line):
-    """DOCUMENTATION :
-        La fonction devrait nettoyer une ligne du fichier texte selon les normes souhaitées. Dans ce cas, je lui ai assigné trois normes de proprété :
-            1. Toutes les apostrophes doivent être identiques, selon l'unicode U+0027, et pas par exemple le guillemet-apostrophe unicode U+2019.
-            2. Avant et après chaque signe de ponctuation double (: ; « » ! ? % $ #) se trouve forcement un espace.
-            3. Avant chaque signe de ponctuation simple (. ,) il n'y a pas d'espace.
-
-        paramètres :
-            new_line == la chaîne de caractères passée dans la boucle de la fonction parente, donc une ligne de l'objet 'reader' 
-
-        sortie :
-            new_line == une chaîne modifiée destinée pour la prochaine fonction de la boucle, ce qui la rendre en conformité aux normes d'XML."""
-    # effacer les espaces au début de ligne
-    new_line = re.sub(dictPattern['empty space at start of line'], dictString['no space'], line)
-    # remplacer tous les guillements-apostrophes avec une apostrophe
-    new_line = re.sub(dictPattern['bad apostrophe'], dictString['good apostrophe'], new_line)
-    # insérer un espace entre une signe de ponctuation et un mot, ": exemple"
-    new_line = re.sub(dictPattern['space missing between two-part punctuation and word'], dictString['one space'], new_line)
-    # insérer un espace entre un mot et une signe de ponctuation, "exemple :"
-    new_line = re.sub(dictPattern['space missing between word and two-part punctuation'], dictString['one space'], new_line)
-    # supprimer un espace entre un mot et une signe de ponctuation, "exemple."
-    new_line = re.sub(dictPattern['extra space before simple punctuation'], dictString['no space'], new_line)
-    return new_line
-
-
-def xml_elements(new_line):
-    """DOCUMENTATION :
-        La fonction devrait formatter une ligne du fichier texte selon les normes souhaitées. Dans ce cas, je lui ai assigné trois normes d'XML :
-            1. Les expressions ou mots en italique doivent être mises entre les balises d'XML <hi rend="italic"> et </hi>.
-            2. Les coquilles suivies par [sic] doivent être mises entre les balises <sic> et </sic>.
-            3. Les corrections entre crochets doivent être mises entre deux sets de balises : <choice><corr> et </corr><sic></sic></choice>.
-
-        paramètres :
-            new_line == la chaîne de caractères sortante de la fonction précédente qui l'a nettoyée
-
-        sortie :
-            new_line == une chaîne modifiée destinée pour la prochaine fonction de la boucle, ce qui l'utilise pour écrire une nouvelle ligne dans la fichier 'version'."""
-    # 1. mots en italique == <hi rend="italic"> et </hi>
-    if re.search(dictPattern['double underscore and content between'], new_line) :
-        match = re.search(dictPattern['double underscore and content between'], new_line)
-        new_line = re.sub(dictPattern['double underscore and content between'], "{tag1}{match}{tag2}".format(tag1=dictString['first italics tag'], match=match.group(2), tag2=dictString['last italics tag']), new_line)
-    elif re.search(dictPattern['continuing italic word at end of line'], new_line):
-        match = re.search(dictPattern['continuing italic word at end of line'], new_line)
-        new_line = re.sub(dictPattern['continuing italic word at end of line'], "{tag}{match}".format(tag=dictString['first italics tag'], match=match.group(2)), new_line)
-    elif re.search(dictPattern['continued italic word at start of line'], new_line):
-        match = re.search(dictPattern['continued italic word at start of line'], new_line)
-        new_line = re.su(dictPattern['continued italic word at start of line'], "{match}{tag}".format(match=match.group(1), tag=dictString['last italics tag']), new_line)
-    else:
-        pass
-    # 2. coquilles suivies par [sic] == <sic> et </sic>
-    if re.search(dictPattern['sic in brackets'], new_line):
-        match = re.search(dictPattern['sic in brackets'], new_line)
-        new_line = re.sub(dictPattern['sic in brackets'], "{tag1}{match}{tag2}".format(tag1=dictString['first sic tag'], match=match.group(1), tag2=dictString['last sic tag']), new_line)
-    else:
-        pass
-    # 3. corrections == <choice><corr> et </corr><sic></sic></choice>
-    if re.search(dictPattern['correction'], new_line):
-        match = re.search(dictPattern['correction'], new_line)
-        new_line = re.sub(dictPattern['correction'], "{tag1}{match}{tag2}".format(tag1=dictString['first correction tags'], match=match.group(0), tag2=dictString['last correction tags']), new_line)
-    else:
-        pass
-    return new_line
-
+            f.write(line)
 
 def empty_version(version):
     """DOCUMENTATION :
@@ -121,7 +57,6 @@ def empty_version(version):
     with open(version, 'w') as f:
         pass
     return version
-
 
 def read_file(path):
     """DOCUMENTATION :
