@@ -45,7 +45,7 @@
 
 	> Cet exemple de commande dans le terminal démarrera la fonction ```add``` et ensuite récrira le fichier __data/in_transcription/19_janvier_1.txt__ vers __data/in_transcription/full_text.txt__ avec des modifications de l'XML. De plus, elle lui donnera l'id "19Jan" qui servira à l'encodage XML.
 
-	* S'il y a déjà des données récrites dans le fichier __data/in_transcription/full_text.txt__, la fonction ```add``` le reconnaîtra et ajoutera le nouveau à la fin, en gardant <\body> en haut et <\\body> en bas. Par contre, la fonction compte sur l'utilisateur d'ajouter des fichiers dans leur propre ordre.
+	* S'il y a déjà des données récrites dans le fichier __data/in_transcription/full_text.txt__, la fonction ```add``` le reconnaîtra et ajoutera le nouveau à la fin, en gardant \<body> en haut et <\\body> en bas. Par contre, la fonction compte sur l'utilisateur d'ajouter des fichiers dans leur propre ordre.
 
 	* Dans le cas où s'effectue un erreur d'utilisateur, il est recommandé d'appeller la fonction ```erase``` du programme ```merge.py```. Cette dernière va effacer les contenus du __data/in_transcription/full_text.txt__ pour qu'on puisse recommencer d'y ajouter des fichiers.
 
