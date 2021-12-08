@@ -1,5 +1,5 @@
 from mypythonlibrary.mylibrary.generalFormatting import basic_clean, xml_elements
-from mypythonlibrary.mylibrary.nameFormatting import format_name, make_index
+from mypythonlibrary.mylibrary.nameFormatting import format_name
 
 def main():
     """DOCUMENTATION :

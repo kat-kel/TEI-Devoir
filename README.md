@@ -2,43 +2,53 @@
 
 [Consignes de l'évaluation : github.com/Segolene-Albouy](https://github.com/Segolene-Albouy/XML-TEI_M2TNAH/blob/main/ConsignesEvaluation.md)
 
-#### Sujet — Roman feuilleton : [George Sand, *Daniella*, La Presse](https://gallica.bnf.fr/html/und/presse-et-revues/la-daniella?mode=desktop)
-
-* Télécharger le texte via l’interface de Gallica ;
-* Nettoyer le texte (doubles espaces, problème sur les caractères accentués, coquilles…) ;
-* Structurer le texte ;
-* Signaler dans le texte les noms de personnages et les noms de lieux ;
-* Faire un index des noms de personnages et de lieux ;
-* Compléter le `teiHeader` ;
-* Écrire l’ODD la plus restrictive possible en fonction de votre encodage ;
-* Ajouter dans votre ODD la documentation sur votre projet d’encodage, les éléments que vous avez encodés : pourquoi et comment, et quels pourront être à terme les usages de votre édition.
-
-#### Consignes générales
-
-* Structurer en XML-TEI votre texte en vue d’une édition et en respectant le genre auquel appartient votre extrait **(/6)** ;
-
-* Compléter de la manière la plus précise possible le `teiHeader` de votre édition, en fonction des éléments nécessaires à son établissement et à la compréhension du texte **(/4)** ;
-
-* Écrire une ODD adaptée à votre encodage et documentée **(/10)** :
-	- Générer une ODD à partir de `Roma` ou de `oddbyexample` (/1) ;
-	- Votre ODD doit contenir au moins :
-		- Une règle contraignant l’usage d’un attribut et sa ou ses valeurs (/1) ;
-		- Une règle contraignant l’enchaînement de certains éléments (/1) ;
-		- Une règle contraignant la valeur d’un attribut ou l’usage d’un élément ou d’un attribut en fonction de son environnement (/1).
-	- À partir de votre ODD, générer la documentation HTML de votre projet :
-		- Présenter en introduction votre projet et ses exploitations possibles (/3) ;
-		- Documenter le fonctionnement de votre encodage et vos choix de balises (/3).
     
 # Ma Méthode
 
 ## Nettoyer le texte
 
 1. Télécharger une image JPEG en haute résolution de Gallica qui extrait uniquement le contenu du feuilleton.
+
 2. Transformer le JPEG en PDF. (Moi, j'ai utilisé le logiciel Tesseract)
-3. Transcrire dans eScriptorium le fichier PDF, selon les normes ci-dessous.
-	* Documenter tout occurence de mot en italique et de coquille
-4. Sortir d'eScriptorium un fichier TEXT et le stocker dans ```data/in_transcription```.
-5. Passer cette transcription préliminaire dans le programme que j'ai écrit qui s'appelle 'clean.py'
-	* Ce programme python a besoin de pacquets ```re``` et ```click```
-	* Il envoie un fichier texte nettoyé et légèrement formatté en XML dans un sous-dossier ```data/out_transcription``` à la suite d'une commande dans le terminal ```python clean.py [NOM]``` où NOM est la partie unique dans le nom du fichier.
-	* exemple : depuis le dossier principal ```python clean.py 19_janvier_1``` prend le fichier data/in_transcription/19_janvier_1.txt et sort le fichier data/out_transcription/19_janvier_1.txt
+
+3. Transcrire dans eScriptorium le fichier PDF, en notant dans un fichier à part des mots en italiques et des coquilles.
+
+4. Sortir de l'eScriptorium un fichier TEXT et le stocker dans __data/out_eScriptorium__.
+
+5. Faire des petites modifications à la main et sauvgarder les transcriptions modifiés dans le sous-dossier __data/in_transcription__.
+
+	* D'après les notes prises lors de la transcription dans eScriptorium :
+
+		* Entourner des mots en italique par deux underscores ; suivre des coquilles avec \[sic] ; entourner par des crochets des corrections des lettres et/ou des mots illisibles, e emple --> e\[x]emple
+
+	* Récupérer les paragraphes de l'imprimé :
+
+		* Pour fusionner des mots divisés à la fin d'une ligne, sélectionner ```(-)\n``` et le remplacer avec rien.
+
+		* Pour fusionner des phrases qui traversent des lignes, sélectionner ```(\b|[__]|\,|\;)\n``` et le remplacer avec ```$1 ```, avec un espace à la fin qui remplacera le saut de ligne.
+
+		* Mais si le texte d'origine ne contient pas d'espaces pour diviser des paragraphes--comme celui qui sort de l'eScriptorium--cette méthode se trompera sur les phrases qui commencent une ligne mais pas un nouveau paragraphe. Il faut donc vérifier avec l'image transcrite que les lignes de texte représentent les paragraphes.
+
+6. Passer tous les fichiers de __data/in_transcription__ dans la fonction ```add``` du programme ```merge.py```, qui va les combiner dans le fichier __data/in_transcription/full_text.txt__. La fonction créera ce dernier fichier s'il n'existe pas déjà. D'ailleurs, il faut éxecuter la fonction ```add``` sur des fichiers dans leur propre ordre.
+
+	* La fonction ```add``` de ```merge.py``` exige deux arguments dans l'ordre suivant : (1) le nom du fichiers (sans .txt) qui doit forcement se trouver dans __data/in_transcription__, (2) l'id de la source (l'id devrait être court)
+
+	* La fonction avec ces deux arguments se ressemblera à celui ci-dessous :
+
+	```python merge.py add 19_janvier_1 19Jan```
+
+	> Let exemple démarrera la fonction ```add``` et ensuite récrira le fichier __data/in_transcription/19_janvier_1.txt__ vers __data/in_transcription/full_text.txt__ avec des modifications de l'XML. De plus, elle lui donnera l'id "19Jan" qui servira à l'encodage XML.
+
+	* S'il y a déjà des données récrites dans le fichier __data/in_transcription/full_text.txt__, la fonction ```add``` le reconnaîtra et ajoutera le nouveau à la fin, en gardant <\body> en haut et <\\body> en bas. Par contre, la fonction compte sur l'utilisateur d'ajouter des fichiers dans leur propre ordre.
+
+	* Dans le cas où s'effectue un erreur d'utilisateur, il est recommandé d'appeller la fonction ```erase``` du programme ```merge.py```. Cette dernière va effacer les contenus du __data/in_transcription/full_text.txt__ pour qu'on puisse recommencer d'y ajouter des fichiers.
+
+7. Nettoyer et formatter le fichier __data/in_transcription/full_text.txt__ et l'envoyer dans le format XML vers __data/out_transcription/full_text.xml__ avec la fonction ```clean.py```.
+
+	* La fonction ```clean.py``` agit sur des fichiers sans arguments. Elle n'est donc moins adaptable ; le fichier d'entrée __data/in_transcription/full_text.txt__ doit se trouver dans le bon endroit et sous ce nom.
+
+	* ```clean.py``` a besoin d'une librarie ```mypthonlibrary/mylibrary``` et ses deux modules dedans :
+
+		* Le module ```generalFormatting.py``` fournit des fonctions basic_clean() et xml_formatting(). Ces deux fonctions peuvent s'appliquer à peu importe quelle transcription en format TEXT qui conforme aux normes décrites dans l'étape 5.
+
+		* Par contre, le module ```nameFormatting.py``` agit sur une liste de noms qui est écrite directement dans le programme ```clean.py```. Ce module, son dictionnaire et sa commande format_name(), est donc calibré spécifiquement pour les chapitres XI et XII de __Daniella__ et est moins adaptable. Cependant, son dictionnaire et l'architecture de sa fonction format_name() peuvent être adpatés pour des autres documents

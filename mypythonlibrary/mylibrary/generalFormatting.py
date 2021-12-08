@@ -1,4 +1,5 @@
 import re
+# Un module qui contient des dictionnaires et deux fonctions qui les utilisent afin de soit nettoyer un texte, 'basic.clean(1)' soit formatter un texte avec des balises fondamentales de l'XML, 'xml_elements(1)'.
 
 # un dictionnaire d'objets motifs, des 'Patterns", sortants d'une expression régulière pour capturer certaines chaînes ciblées
 dictPattern = {
