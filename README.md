@@ -7,11 +7,12 @@
 
 ## Nettoyer le texte
 
-1. Télécharger une image JPEG en haute résolution de Gallica qui extrait uniquement le contenu du feuilleton.
+1. Télécharger des images JPEG en haute résolution de Gallica qui extrait uniquement le contenu du feuilleton.
+	* Travailler sur [chapitre XI](https://gallica.bnf.fr/ark:/12148/bpt6k4775593/f1.image) et [chapitre XII](https://gallica.bnf.fr/ark:/12148/bpt6k4775601/f1.image) de _Daniella_ par George Sand.
 
 2. Transformer le JPEG en PDF. (Moi, j'ai utilisé le logiciel Tesseract)
 
-3. Transcrire dans eScriptorium le fichier PDF, en notant dans un fichier à part des mots en italiques et des coquilles.
+3. Transcrire dans [eScriptorium](https://traces6.paris.inria.fr/) le fichier PDF, en notant dans un fichier à part des mots en italiques et des coquilles.
 
 4. Sortir de l'eScriptorium un fichier TEXT et le stocker dans __data/out_eScriptorium__.
 ![exemple 1](https://github.com/kat-kel/TEI-Devoir/blob/main/Capture%20d%E2%80%99%C3%A9cran%20de%202021-12-08%2020-03-47.png?raw=true)
