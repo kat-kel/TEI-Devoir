@@ -1,5 +1,5 @@
-from mypythonlibrary.mylibrary.generalFormatting import basic_clean, xml_elements, tag_paragraph
-from mypythonlibrary.mylibrary.nameFormatting import format_name
+from mypythonlibrary.mylibrary.generalFormatting import basic_clean, xml_elements
+from mypythonlibrary.mylibrary.nameFormatting import format_name, make_index
 
 def main():
     """DOCUMENTATION :
@@ -27,36 +27,33 @@ def main():
              """
     
     # identifier le chemin du fichier de départ ; ne le modifiez pas ! ce fichier sera ouvert uniquement dans un mode de lecture
-    original = 'data/in_transcription/full_text.txt'
+    in_file = 'data/in_transcription/full_text.txt'
     # transformer le fichier en un objet itérable, ce qui s'appelle le 'reader' 
-    reader = read_file(original)
+    in_file_reader = read_file(in_file)
 
     # identifier le chemin du fichier où le texte modifié se trouvera
-    version = 'data/out_transcription/full_text.xml' 
+    out_file = 'data/out_transcription/full_text.xml' 
     # préparer le nouveau fichier en supprimant les anciennes modifications s'il y en a dans le fichier, pour qu'il soit vide au début de la fonction
-    version = empty_version(version)
+    out_file = empty_version(out_file)
 
-    # en lisant chaque ligne du texte (celle qui est téchniquement un item de la liste de chaînes du 'reader') modifier cette chaîne et la écrire dans le fichier ouvert en mode d'ecriture, qui s'appelle 'f' dans la boucle ci-dessous mais 'version' dans la fonction main()
-    with open(version, 'w', encoding='utf8') as f:
-        for line in reader:
-            # nettoyer la ligne
-            line = basic_clean(line)
-            # formatter la ligne selon
-            line = xml_elements(line)
-            # formatter les occurences des noms
-            names = ['Daniella', 'Medora', 'Harriet', 'Lord B', 'Lady B', 'Valreg', 'Frascati', 'Rome', 'Tartaglia']
-            for item in names:
-                line = format_name(item, line)
-            line = tag_paragraph(line)
-            # écrire la ligne modifié dans le fichier ouvert en mode d'écriture 'version'
-            f.write(line)
+    # nettoyer les lignes de texte et mettre des balises XML ; chaque ligne de texte lue du fichier 'originaĺ'
+    formatted_data = []
+    for line in in_file_reader:
+        line = basic_clean(line)
+        line = xml_elements(line)
+        names_list = ['Daniella', 'Medora', 'Harriet', 'Lord B', 'Lady B', 'Jean Valreg', 'Frascati', 'Rome', 'Tartaglia']
+        for name in names_list:
+            line = format_name(name, line)
+        formatted_data.append(line)
+    with open(out_file, 'w', encoding='utf8') as f:
+        f.writelines(formatted_data)
 
-def empty_version(version):
+def empty_version(file_path):
     """DOCUMENTATION :
     	La fonction ouvre le fichier où se stockera le nouveau texte et efacer ses contenus s'il y en a."""
-    with open(version, 'w') as f:
+    with open(file_path, 'w') as f:
         pass
-    return version
+    return file_path
 
 def read_file(path):
     """DOCUMENTATION :

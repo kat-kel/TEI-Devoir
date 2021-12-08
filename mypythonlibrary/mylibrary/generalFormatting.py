@@ -12,7 +12,7 @@ dictPattern = {
     'sic in brackets': re.compile(r"(\S+)(\[sic\])"), # renvoie une liste de tuples ; l'item à garder est le premier
     'correction': re.compile(r"\[([^\[]+)\]"), # renvoie une liste de chaînes
     'paragraph': re.compile(r"(^[^<][^A-Z{2,}].+)"),
-    'not paragraph': re.compile(r"(([A-Z]{2,}.+)|(?:<body>)|(?:</body>)|(?:<pb)|(?:</pb>))")
+    'not paragraph': re.compile(r"(([A-Z]{2,}.+)|(?:<body>)|(?:</body>))")
 }
 
 # un dictionnaire de chaînes de caractères, des 'Strings' ; elles seront envoyées soit dans la place d'une chaîne existante soit à côté d'une chaîne existante
@@ -24,8 +24,8 @@ dictString = {
         'last italics tag': '</hi>',
         'first sic tag': '<sic>',
         'last sic tag': '</sic>',
-        'first correction tags': '<choice><corr>',
-        'last correction tags': '</corr><sic></sic></choice>'
+        'first correction tags': '<choice><sic></sic><corr>',
+        'last correction tags': '</corr></choice>'
 }
 
 def basic_clean(line):
@@ -93,7 +93,7 @@ def xml_elements(line):
             for match_tuple in match_list:
                 line = re.sub(dictPattern['sic in brackets'], "{tag1}{match}{tag2}".format(tag1=dictString['first sic tag'], match=match_tuple[0], tag2=dictString['last sic tag']), line, 1)
 
-    # (4) corrections == <choice><corr> et </corr><sic></sic></choice>
+    # (4) corrections == <choice><sic></sic><corr> et </corr></choice>
     if re.search(dictPattern['correction'], line):
         match_list = re.findall(dictPattern['correction'], line)
         # pour autant de fois que la commande .findall a trouvé des objets motifs, modifier uniqument le premier ; cette boucle permet d'éviter que toutes les occurences d'objet motif dans une ligne ne soit pas modifiée avec une solution dérivée de la première occurence mais qui n'est pas convenable aux celles qui suivent
@@ -102,12 +102,3 @@ def xml_elements(line):
     else:
         pass
     return line
-
-def tag_paragraph(line):
-    new_line = ""
-    if re.search(dictPattern['not paragraph'], line):
-        new_line = line
-    else:
-        new_line = "{}{}{}{}".format("<p>", line, "</p>", "\n")
-        print(new_line)
-    return new_line
