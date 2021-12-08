@@ -21,7 +21,9 @@
 
 	* D'après les notes prises lors de la transcription dans eScriptorium :
 
-		* Entourner des mots en italique par deux underscores ; suivre des coquilles avec \[sic] ; entourner par des crochets des corrections des lettres et/ou des mots illisibles, e emple --> e\[x]emple
+		* Entourner des mots en italique par deux underscores
+		* Suivre des coquilles avec \[sic]
+		* Entourner par des crochets des corrections des lettres et/ou des mots illisibles, e emple --> e\[x]emple
 
 	* Récupérer les paragraphes de l'imprimé :
 
@@ -40,7 +42,7 @@
 
 	```python merge.py add 19_janvier_1 19Jan```
 
-	> Let exemple démarrera la fonction ```add``` et ensuite récrira le fichier __data/in_transcription/19_janvier_1.txt__ vers __data/in_transcription/full_text.txt__ avec des modifications de l'XML. De plus, elle lui donnera l'id "19Jan" qui servira à l'encodage XML.
+	> Cet exemple de commande dans le terminal démarrera la fonction ```add``` et ensuite récrira le fichier __data/in_transcription/19_janvier_1.txt__ vers __data/in_transcription/full_text.txt__ avec des modifications de l'XML. De plus, elle lui donnera l'id "19Jan" qui servira à l'encodage XML.
 
 	* S'il y a déjà des données récrites dans le fichier __data/in_transcription/full_text.txt__, la fonction ```add``` le reconnaîtra et ajoutera le nouveau à la fin, en gardant <\body> en haut et <\\body> en bas. Par contre, la fonction compte sur l'utilisateur d'ajouter des fichiers dans leur propre ordre.
 
@@ -49,7 +51,7 @@
 7. Nettoyer et formatter le fichier __data/in_transcription/full_text.txt__ et l'envoyer dans le format XML vers __data/out_transcription/full_text.xml__ avec la fonction ```clean.py```.
 ![exemple 4](https://github.com/kat-kel/TEI-Devoir/blob/main/Capture%20d%E2%80%99%C3%A9cran%20de%202021-12-08%2020-01-21.png?raw=true)
 
-	* La fonction ```clean.py``` agit sur des fichiers sans arguments. Le fichier d'entrée __data/in_transcription/full_text.txt__ doit donc se trouver dans le bon endroit et sous ce nom.
+	* La fonction ```clean.py``` ne prend pas d'argument. Du coup le fichier d'entrée __data/in_transcription/full_text.txt__ doit se trouver dans le bon endroit et sous son propre nom.
 
 	* ```clean.py``` a besoin d'une librarie ```mypthonlibrary/mylibrary``` et ses deux modules :
 
