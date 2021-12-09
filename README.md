@@ -14,10 +14,10 @@
 
 3. Transcrire dans [eScriptorium](https://traces6.paris.inria.fr/) le fichier PDF, en notant dans un fichier à part des mots en italiques et des coquilles.
 
-4. Sortir de l'eScriptorium un fichier TEXT et le stocker dans __data/out_eScriptorium__.
+4. Sortir de l'eScriptorium des fichiers TEXT et les stocker dans le dossier du projet __data/out_eScriptorium__.
 ![exemple 1](https://github.com/kat-kel/TEI-Devoir/blob/main/Capture%20d%E2%80%99%C3%A9cran%20de%202021-12-08%2020-03-47.png?raw=true)
 
-5. Faire des petites modifications à la main et sauvgarder les transcriptions modifiés dans le sous-dossier __data/in_transcription__.
+5. Faire deux étapes de petites modifications à la main et sauvgarder les fichiers modifiés dans un nouveau dossier __data/in_transcription__.
 ![exemple 2](https://github.com/kat-kel/TEI-Devoir/blob/main/Capture%20d%E2%80%99%C3%A9cran%20de%202021-12-08%2020-03-01.png?raw=true)
 
 	* D'après les notes prises lors de la transcription dans eScriptorium :
@@ -34,20 +34,20 @@
 
 		* Mais si le texte d'origine ne contient pas d'espaces pour diviser des paragraphes--comme celui qui sort de l'eScriptorium--cette méthode se trompera sur les phrases qui commencent une ligne mais pas un nouveau paragraphe. Il faut donc vérifier avec l'image transcrite que les lignes de texte représentent les paragraphes.
 
-6. Passer tous les fichiers de __data/in_transcription__ dans la fonction ```add``` du programme ```merge.py```, qui va les combiner dans le fichier __data/in_transcription/full_text.txt__. La fonction créera ce dernier fichier s'il n'existe pas déjà. D'ailleurs, il faut éxecuter la fonction ```add``` sur des fichiers dans leur propre ordre.
+6. Combiner tous les fichiers de __data/in_transcription/__ dans un seul fichier en utilisant un programme que j'ai écrit, ```merge.py```. Grâce à la méthode @click, ```merge.py``` peut démarrer deux fonctions. La fonction ```add``` ajoute les contenus textuels d'un fichier dans le fichier principal : __data/in_transcription/full_text.txt__. Elle créera ce dernier fichier s'il n'existe pas déjà. La deuxième fonction, ```erase```, efface tous les contenus du fichier principal, qui est utile s'il y a un erreur d'utilisateur ou pour commencer un nouveau fichier composé.
 ![exemple 3](https://github.com/kat-kel/TEI-Devoir/blob/main/Capture%20d%E2%80%99%C3%A9cran%20de%202021-12-08%2020-02-24.png?raw=true)
 
-	* La fonction ```add``` de ```merge.py``` exige deux arguments dans l'ordre suivant : (1) le nom du fichiers (sans .txt) qui doit forcement se trouver dans __data/in_transcription__, (2) l'id de la source (l'id devrait être court)
+	* La fonction @click ```add``` exige deux arguments dans l'ordre suivant :
+	
+		1. Le nom du fichier sans l'extension .txt (le fichier doit se trouve dans __data/in_transcription/__)
+		
+		2. L'id xml de la source transcrite (l'id devrait être court et sans espaces)
 
-	* La fonction avec ces deux arguments se ressemblera à celui ci-dessous :
+		* Exemple : ```python merge.py add 19_janvier_1 19Jan```. Depuis le terminal, cette ligne démarrera la fonction ```add``` et ensuite récrira le fichier __data/in_transcription/19_janvier_1.txt__ vers __data/in_transcription/full_text.txt__ avec des modifications de l'XML. De plus, elle lui donnera l'id "19Jan" qui servira à l'encodage XML, parce que le deuxième argument entrée est la chaîne "19Jan."
 
-	```python merge.py add 19_janvier_1 19Jan```
+		* S'il y a déjà des données récrites dans le fichier __data/in_transcription/full_text.txt__, la fonction ```add``` le reconnaîtra et ajoutera les nouvelles à la fin, en gardant \<body> en haut du document et <\\body> en bas. Par contre, la fonction compte sur l'utilisateur d'ajouter des fichiers dans leur propre ordre.
 
-	> Cet exemple de commande dans le terminal démarrera la fonction ```add``` et ensuite récrira le fichier __data/in_transcription/19_janvier_1.txt__ vers __data/in_transcription/full_text.txt__ avec des modifications de l'XML. De plus, elle lui donnera l'id "19Jan" qui servira à l'encodage XML.
-
-	* S'il y a déjà des données récrites dans le fichier __data/in_transcription/full_text.txt__, la fonction ```add``` le reconnaîtra et ajoutera le nouveau à la fin, en gardant \<body> en haut et <\\body> en bas. Par contre, la fonction compte sur l'utilisateur d'ajouter des fichiers dans leur propre ordre.
-
-	* Dans le cas où s'effectue un erreur d'utilisateur, il est recommandé d'appeller la fonction ```erase``` du programme ```merge.py```. Cette dernière va effacer les contenus du __data/in_transcription/full_text.txt__ pour qu'on puisse recommencer d'y ajouter des fichiers.
+	* Dans le cas où s'effectue un erreur d'utilisateur, il est recommandé d'appeller la fonction ```erase``` du programme ```merge.py```. Cette dernière va effacer les contenus du __data/in_transcription/full_text.txt__ pour qu'on puisse recommencer d'y ajouter des fichiers. Exemple : ```python merge.py erase```
 
 7. Nettoyer et formatter le fichier __data/in_transcription/full_text.txt__ et l'envoyer dans le format XML vers __data/out_transcription/full_text.xml__ avec la fonction ```clean.py```.
 ![exemple 4](https://github.com/kat-kel/TEI-Devoir/blob/main/Capture%20d%E2%80%99%C3%A9cran%20de%202021-12-08%2020-01-21.png?raw=true)
