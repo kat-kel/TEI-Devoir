@@ -7,23 +7,25 @@
 
 ## Compétences : RegEx, Python, et création d'une librairie python
 
-1. Télécharger des images JPEG en haute résolution de Gallica qui extrait uniquement le contenu du feuilleton.
+1. Télécharger des images JPEG en haute résolution de Gallica ; sélecetionner uniquement le contenu du feuilleton.
 	* Travailler sur [chapitre XI](https://gallica.bnf.fr/ark:/12148/bpt6k4775593/f1.image) et [chapitre XII](https://gallica.bnf.fr/ark:/12148/bpt6k4775601/f1.image) de _Daniella_ par George Sand.
 
-2. Transformer le JPEG en PDF. (Moi, j'ai utilisé le logiciel Tesseract)
+2. Transformer le JPEG en PDF. (Moi, j'ai utilisé le logiciel [Tesseract](https://tesseract-ocr.github.io/tessdoc/Home.html))
 
-3. Transcrire dans [eScriptorium](https://traces6.paris.inria.fr/) le fichier PDF, en notant dans un fichier à part des mots en italiques et des coquilles.
+3. Transcrire dans un logicel HTR, par exemple [eScriptorium](https://traces6.paris.inria.fr/), le fichier PDF en notant quelque part des mots en italiques et des coquilles.
 
-4. Sortir de l'eScriptorium des fichiers TEXT et les stocker dans le dossier du projet __data/out_eScriptorium__.
+4. Sortir de l'eScriptorium des fichiers TEXT et les stocker dans le dossier du projet, ce qui s'appelle __data/out_eScriptorium__.
 ![exemple 1](https://github.com/kat-kel/TEI-Devoir/blob/main/Capture%20d%E2%80%99%C3%A9cran%20de%202021-12-08%2020-03-47.png?raw=true)
 
-5. Faire deux étapes de petites modifications à la main et sauvgarder les fichiers modifiés dans un nouveau dossier __data/in_transcription__.
+5. Faire deux étapes de petites modifications à la main et sauvgarder les fichiers modifiés dans un nouveau dossier : __data/in_transcription__.
 ![exemple 2](https://github.com/kat-kel/TEI-Devoir/blob/main/Capture%20d%E2%80%99%C3%A9cran%20de%202021-12-08%2020-03-01.png?raw=true)
 
-	* D'après les notes prises lors de la transcription dans eScriptorium :
+	* D'après les notes prises lors de la transcription :
 
 		* Entourner des mots en italique par deux underscores
+		
 		* Suivre des coquilles avec \[sic]
+		
 		* Entourner par des crochets des corrections des lettres et/ou des mots illisibles, e emple --> e\[x]emple
 
 	* Récupérer les paragraphes de l'imprimé :
