@@ -3,9 +3,9 @@
 [Consignes de l'évaluation : github.com/Segolene-Albouy](https://github.com/Segolene-Albouy/XML-TEI_M2TNAH/blob/main/ConsignesEvaluation.md)
 
     
-# Ma Méthode
+# Ma Méthode de Nettoyer le Texte
 
-## Nettoyer le texte
+## Compétences : RegEx, Python, et création d'une librairie python
 
 1. Télécharger des images JPEG en haute résolution de Gallica qui extrait uniquement le contenu du feuilleton.
 	* Travailler sur [chapitre XI](https://gallica.bnf.fr/ark:/12148/bpt6k4775593/f1.image) et [chapitre XII](https://gallica.bnf.fr/ark:/12148/bpt6k4775601/f1.image) de _Daniella_ par George Sand.
@@ -59,9 +59,3 @@
 		* Le module ```generalFormatting.py``` fournit des fonctions basic_clean() et xml_formatting(). Ces deux fonctions peuvent s'appliquer à peu importe quelle transcription en format TEXT qui conforme aux normes décrites dans l'étape 5.
 
 		* Par contre, le module ```nameFormatting.py``` agit sur une liste de noms qui est écrite directement dans le programme ```clean.py```. Ce module, son dictionnaire et sa commande format_name() sont donc calibrés spécifiquement pour les chapitres XI et XII de _Daniella_. Cependant, le dictionnaire et l'architecture de la fonction format_name() peuvent être adpatés pour des autres documents.
-
-## Faire des index et compléter le ```teiHeader```
-1. à voir
-
-## Écrire l'ODD
-1. à voir
