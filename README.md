@@ -14,10 +14,10 @@
 
 3. Transcrire dans un logicel HTR, par exemple [eScriptorium](https://traces6.paris.inria.fr/), le fichier PDF en notant quelque part des mots en italiques et des coquilles.
 
-4. Sortir de l'eScriptorium des fichiers TEXT et les stocker dans le dossier du projet, ce qui s'appelle __data/out_eScriptorium__.
+4. Sortir de l'eScriptorium des fichiers TEXT et les stocker dans le dossier du projet, ce qui s'appelle __data/out_eScriptorium/__.
 ![exemple 1](https://github.com/kat-kel/TEI-Devoir/blob/main/Capture%20d%E2%80%99%C3%A9cran%20de%202021-12-08%2020-03-47.png?raw=true)
 
-5. Faire deux étapes de petites modifications à la main et sauvgarder les fichiers modifiés dans un nouveau dossier : __data/in_transcription__.
+5. Faire deux étapes de petites modifications à la main et sauvgarder les fichiers modifiés dans un nouveau dossier : __data/in_transcription/__.
 ![exemple 2](https://github.com/kat-kel/TEI-Devoir/blob/main/Capture%20d%E2%80%99%C3%A9cran%20de%202021-12-08%2020-03-01.png?raw=true)
 
 	* D'après les notes prises lors de la transcription :
