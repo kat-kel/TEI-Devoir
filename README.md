@@ -15,10 +15,10 @@
 3. Transcrire dans un logicel HTR, par exemple [eScriptorium](https://traces6.paris.inria.fr/), le fichier PDF en notant quelque part des mots en italiques et des coquilles.
 
 4. Sortir de l'eScriptorium des fichiers TEXT et les stocker dans le dossier du projet, ce qui s'appelle __data/out_eScriptorium/__.
-![exemple 1](https://github.com/kat-kel/TEI-Devoir/blob/main/Capture%20d%E2%80%99%C3%A9cran%20de%202021-12-08%2020-03-47.png?raw=true)
+![exemple 1](https://github.com/kat-kel/TEI-Devoir/blob/main/exemple/exemple2.png?raw=true)
 
 5. Faire deux étapes de petites modifications à la main et sauvgarder les fichiers modifiés dans un nouveau dossier : __data/in_transcription/__.
-![exemple 2](https://github.com/kat-kel/TEI-Devoir/blob/main/Capture%20d%E2%80%99%C3%A9cran%20de%202021-12-08%2020-03-01.png?raw=true)
+![exemple 2](https://github.com/kat-kel/TEI-Devoir/blob/main/exemple/exemple1.png?raw=true)
 
 	* D'après les notes prises lors de la transcription :
 
@@ -37,7 +37,7 @@
 		* Mais si le texte d'origine ne contient pas d'espaces pour diviser des paragraphes--comme celui qui sort de l'eScriptorium--cette méthode se trompera sur les phrases qui commencent une ligne mais pas un nouveau paragraphe. Il faut donc vérifier avec l'image transcrite que les lignes de texte représentent les paragraphes.
 
 6. Combiner tous les fichiers de __data/in_transcription/__ dans un seul fichier en utilisant un programme que j'ai écrit, ```merge.py```. Grâce à la méthode @click, ```merge.py``` peut démarrer deux fonctions. La fonction ```add``` ajoute les contenus textuels d'un fichier dans le fichier principal : __data/in_transcription/full_text.txt__. Elle créera ce dernier fichier s'il n'existe pas déjà. La deuxième fonction, ```erase```, efface tous les contenus du fichier principal, qui est utile s'il y a un erreur d'utilisateur ou pour commencer un nouveau fichier composé.
-![exemple 3](https://github.com/kat-kel/TEI-Devoir/blob/main/Capture%20d%E2%80%99%C3%A9cran%20de%202021-12-08%2020-02-24.png?raw=true)
+![exemple 3](https://github.com/kat-kel/TEI-Devoir/blob/main/exemple/exemple3.png?raw=true)
 
 	* La fonction @click ```add``` exige deux arguments dans l'ordre suivant :
 	
@@ -52,7 +52,7 @@
 	* Dans le cas où s'effectue un erreur d'utilisateur, il est recommandé d'appeller la fonction ```erase``` du programme ```merge.py```. Cette dernière va effacer les contenus du __data/in_transcription/full_text.txt__ pour qu'on puisse recommencer d'y ajouter des fichiers. Exemple : ```python merge.py erase```
 
 7. Nettoyer et formatter le fichier __data/in_transcription/full_text.txt__ et l'envoyer dans le format XML vers __data/out_transcription/full_text.xml__ avec la fonction ```clean.py```.
-![exemple 4](https://github.com/kat-kel/TEI-Devoir/blob/main/Capture%20d%E2%80%99%C3%A9cran%20de%202021-12-08%2020-01-21.png?raw=true)
+![exemple 4](https://github.com/kat-kel/TEI-Devoir/blob/main/exemple/exemple4.png?raw=true)
 
 	* La fonction ```clean.py``` ne prend pas d'argument. Du coup le fichier d'entrée __data/in_transcription/full_text.txt__ doit se trouver dans le bon endroit et sous son propre nom.
 
