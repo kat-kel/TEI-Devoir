@@ -71,7 +71,7 @@ def format_name(name, line):
                     if match_list[i][1] == '': # si le prénom est trouvé sans honorific, donc le deuxième item du tuple est vide
                         # faire la substitution seulement une fois, puis reprendre la boucle pour trouver la prochaine expression recherchée, dans le cas où plusieurs matchs se différent
                         line = re.sub(dictNames['forename with honorific'][keys[0]],\
-                            "{persName}{startFore}{match}{endAll}".\
+                            " {persName}{startFore}{match}{endAll}".\
                                 format(persName=dictNames['id'][keys[1]], startFore='<forename>', match=match_list[i][0], endAll='</forename></persName>'),\
                                     line, 1)
                         line = re.sub(re.compile(r'(?:forename> )'), 'forename>', line)
