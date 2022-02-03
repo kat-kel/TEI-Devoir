@@ -1,15 +1,493 @@
-<sourceDesc>
-	<biblFull>
-		<titleStmt>...
-		</titleStmt>
-
-		<publicationStmt>...
-		</publicationStmt>
-
-		<seriesStmt>...
-		</seriesStmt>
-
-		<notesStmt>...
-		</notesStmt>
-	</biblFull>
-</sourceDesc>
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="out/ODD-transcription.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      
+      <fileDesc>
+         <titleStmt>
+            <title type="main">Daniella</title>
+            <title type="sub">Chapitres XI et XII</title>
+            <author ref="ISNI-0000-0001-2130-9531">
+               <forename>George</forename>
+               <surname>Sand</surname>
+            </author>
+            <respStmt>
+               <persName xml:id="KC">
+                  <forename>Kelly</forename>
+                  <surname>Christensen</surname>
+               </persName>
+               <resp>encodage et conversion en TEI</resp>
+            </respStmt>
+         </titleStmt>
+         
+         <editionStmt>
+            <edition>Numérisation du quotidien <hi rend="italic">La Presse</hi> qui a publié la première édition du roman <hi rend="italic">La Daniella</hi> en feuilleton en <date when="1857">1857</date>.</edition>
+            <respStmt>
+               <name>
+                  <forename>Emile</forename>
+                  <surname>de Girardin</surname>
+               </name>
+               <resp>directeur de publication <hi rend="italic">La Presse</hi></resp>
+            </respStmt>
+            <respStmt>
+               <name>
+                  <forename>Georges</forename>
+                  <surname>Laguerre</surname>
+               </name>
+               <resp>directeur de publication <hi rend="italic">La Presse</hi></resp>
+            </respStmt>
+         </editionStmt>
+         
+         <publicationStmt>
+            <distributor>Bibliothèque nationale de la France</distributor>
+            <idno type="ISSN-1160-7718">ISSN 1160-7718</idno>
+            <availability>
+               <licence
+                  target="https://gallica.bnf.fr/edit/und/conditions-dutilisation-des-contenus-de-gallica"
+                  >Domaine public</licence>
+            </availability>
+         </publicationStmt>
+         
+         <sourceDesc>
+            <biblFull xml:id="Presse-1857-01-19" facs="19_janvier_1.jpg 19_janvier_2.jpg">
+               <titleStmt>
+                  <title type="main">Feuilleton de la Presse du lundi soir 19 janvier 1857</title>
+                  <title type="sub">La Daniella</title>
+                  <author ref="ISNI-0000-0001-2130-9531">
+                     <forename>George</forename>
+                     <surname>Sand</surname>
+                  </author>
+               </titleStmt>
+               <extent>
+                  <measure unit="page" quantity="2"/>
+               </extent>
+               <publicationStmt>
+                  <publisher ref="LaPresse">La Presse</publisher>
+                  <pubPlace>
+                     <address>
+                        <addrLine>rue Montmartre</addrLine>
+                        <addrLine>123</addrLine>
+                        <addrLine><settlement type="city">Paris</settlement></addrLine>
+                        <country key="FR"/>
+                     </address>
+                  </pubPlace>
+                  <date when="1857-01-19">19 janvier 1857</date>
+                  <distributor>Bibliothèque nationale de France</distributor>
+                  <idno type="ISSN">ISSN-L 1160-7718</idno>
+               </publicationStmt>
+               <seriesStmt>
+                  <title>Daniella</title>
+                  <biblScope unit="book">Daniella</biblScope>
+                  <biblScope unit="chapter">XI</biblScope>
+               </seriesStmt>
+            </biblFull>
+            
+            <biblFull xml:id="Presse-1857-01-20" facs="20_janvier_1.jpg 20_janvier_2.jpg">
+               <titleStmt>
+                  <title type="main">Feuilleton de la Presse du mardi soir 20 janvier 1857</title>
+                  <title type="sub">La Daniella</title>
+                  <author ref="ISNI-0000-0001-2130-9531">
+                     <forename>George</forename>
+                     <surname>Sand</surname>
+                  </author>
+               </titleStmt>
+               <extent>
+                  <measure unit="page" quantity="2"/>
+               </extent>
+               <publicationStmt>
+                  <publisher ref="LaPresse">La Presse</publisher>
+                  <pubPlace>
+                     <address>
+                        <addrLine>rue Montmartre</addrLine>
+                        <addrLine>123</addrLine>
+                        <addrLine><settlement type="city">Paris</settlement></addrLine>
+                        <country key="FR"/>
+                     </address>
+                  </pubPlace>
+                  <date when="1857-01-20">20 janvier 1857</date>
+                  <distributor>Bibliothèque nationale de France</distributor>
+                  <idno type="ISSN">ISSN-L 1160-7718</idno>
+               </publicationStmt>
+               <seriesStmt>
+                  <title>Daniella</title>
+                  <biblScope unit="book">Daniella</biblScope>
+                  <biblScope unit="chapter">XII</biblScope>
+               </seriesStmt>
+            </biblFull>
+         </sourceDesc>
+      </fileDesc>
+      
+      <encodingDesc>
+         <p>Cet encodage du roman en feuilleton <hi rend="italic">Daniella</hi> par George Sand a été reálisé à partir de la première édition de chaque chapitre tel qu'il a apparu dans la périodique <hi rend="italic">La Presse</hi>. À la seule exception des sautes de ligne, l'encodage est fidèle à l'imprimé. L'en-tête de chaque premier page y compris les lignes en bas de page sont préservés. Les erreurs typographiques, notamment des lettre illisibles dans la source originale, sont corrigées afin de faciliter la lecture, mais leurs existences sont documentées dans l'encodage.</p>
+      </encodingDesc>
+      
+      <profileDesc>
+         <creation>
+            <lang xml:id="fr"/>
+            <date when-iso="1857"/>
+            <country key="FR"/>
+         </creation>
+         
+         <particDesc>
+            <listPerson>
+               <person xml:id="Valreg">
+                  <persName>Jean Valreg</persName>
+                  <note>Narrateur, épris de la Daniella ; Miss Médora est éprise de lui</note>
+               </person>
+               
+               <person xml:id="Daniella">
+                  <persName>
+                     <forename>Daniella</forename>
+                  </persName>
+                  <note>Appellée soit la Daniella soit la Frascatine ; la suivante de Miss Médora</note>
+               </person>
+               
+               <person xml:id="Medora">
+                  <persName>
+                     <addName type="honorific">Miss</addName> 
+                     <surname>Médora</surname>
+                  </persName>
+                  <note>Orpheline, accompagnée par sa tante Harriet et son oncle le Lord *** ; sa suivante est la Daniella</note>
+               </person>    
+               
+               <person xml:id="Harriet">
+                  <persName>
+                     <addName type="honorific">Miss</addName>
+                     <forename>Harriet</forename>
+                  </persName>
+                  <note>La tante de Miss Médora, l'epouse de Lord B*** ; appellé soit Miss Harriet, soit Lady B***</note>
+               </person>
+               
+               <person xml:id="LordB">
+                  <persName>
+                     <addName type="honorific">Lord</addName>
+                     <forename>B**</forename>
+                  </persName>
+                  <note>Le mari de Harriet et donc l'oncle de Miss Médora</note>
+               </person>
+               
+               <personGrp xml:id="Anglais"/>
+               <listRelation>
+                  <relation name="spouse" mutual="#Harriet #LordB"/>
+                  <relation name="aunt" mutual="#Harriet #Medora"/>
+                  <relation name="uncle" mutual="#LordB #Medora"/>
+               </listRelation>
+               
+               <person xml:id="Brumieres">
+                  <persName>
+                     <forename>Brumières</forename>
+                  </persName>
+                  <note>Peintre rencontré à Marseille, épris de Miss Médora</note>
+               </person>
+               
+               <person xml:id="Benvenuto">
+                  <persName>
+                     <forename>Benvenuto</forename>
+                  </persName>
+                  <note>Appellé soit Tartaglia soit Benvenuto ; ami du narrateur Jean Valreg</note>
+               </person>
+               
+               <person xml:id="Mayer">
+                  <persName>
+                     <surname>Mayer</surname>
+                  </persName>
+                  <note>Médecin français</note>
+               </person>
+               
+               <person xml:id="Raphael">
+                  <persName>
+                     <forename>Raphaël</forename>
+                  </persName>
+                  <note>Peintre et architecte italien</note>
+               </person>
+               
+               <person xml:id="Michelangelo">
+                  <persName>
+                     <forename>Michel-Ange</forename>
+                  </persName>
+                  <note>Peintre, architecte, sculpteur, et poète italien</note>
+               </person>
+               
+               <person xml:id="Mariuccia">
+                  <persName>
+                     <forename>Mariuccia</forename>
+                  </persName>
+                  <note>Gardienne de la villa Piccolomini à Frascati où Valreg s'installe</note>
+               </person>
+               
+               <person xml:id="Cooper">
+                  <persName>
+                     <forename>Cooper</forename>
+                  </persName>
+                  <note>Écrivain américain et auteur du roman Le Dernier des Mohicans en 1826</note>
+               </person>
+               
+               <personGrp xml:id="TêtesPlates">
+                  <note>Tribu amérindienne qui s'appelle aussi Chahta</note>
+               </personGrp>
+            </listPerson>
+         </particDesc>
+         
+         <settingDesc>
+            <listPlace>
+               <place xml:id="villaP">
+                  <placeName>
+                     <objectName>villa</objectName>
+                     <name>Piccolomini</name>
+                     <country key="IT"/>
+                  </placeName>
+               </place>
+               
+               <place xml:id="Frascati">
+                  <placeName>
+                     <settlement type="city">Frascati</settlement>
+                     <country key="IT"/>
+                  </placeName>
+               </place>
+               
+               <place xml:id="Rome">
+                  <placeName>
+                     <settlement type="city">Rome</settlement>
+                     <country key="IT"/>
+                  </placeName>
+               </place>
+               
+               <place xml:id="Tivoli">
+                  <placeName>
+                     <settlement type="city">Tivoli</settlement>
+                     <country key="IT"/>
+                  </placeName>
+               </place>
+               
+               <place xml:id="Ostie">
+                  <placeName>
+                     <settlement type="city">Ostie</settlement>
+                     <country key="IT"/>
+                  </placeName>
+               </place>
+               
+               <place xml:id="Laurentum">
+                  <placeName>
+                     <settlement type="city">Laurentum</settlement>
+                     <country key="IT"/>
+                  </placeName>
+               </place>
+               
+               <place xml:id="Tombouctou">
+                  <placeName>
+                     <settlement type="city">Tombouctou</settlement>
+                     <country key="ML"/>
+                  </placeName>
+               </place>
+               
+               <place xml:id="Marche">
+                  <placeName>
+                     <settlement type="city">La Marche</settlement>
+                     <region>Nièvre</region>
+                     <country key="FR"/>
+                  </placeName>
+               </place>
+               
+               <place xml:id="Paris">
+                  <placeName>
+                     <settlement type="city">Paris</settlement>
+                     <country key="FR"/>
+                  </placeName>
+               </place>
+               
+               <place xml:id="Latium">
+                  <placeName>
+                     <region>Latium</region>
+                     <country key="IT"/>
+                  </placeName>
+               </place>
+               
+               <place xml:id="Bourdonnais">
+                  <placeName>
+                     <region>Duché de Bourbon</region>
+                     <country key="FR"/>
+                  </placeName>
+               </place>
+               
+               <place xml:id="France">
+                  <placeName>
+                     <country key="FR">France</country>
+                  </placeName>
+               </place>
+               
+               <place xml:id="Italie">
+                  <placeName>
+                     <country key="IT">Italie</country>
+                  </placeName>
+               </place>
+               
+               <place xml:id="montGennaro">
+                  <geogName>
+                     <geogFeat type="mountain">Mont</geogFeat>
+                     <name>Gennaro</name>
+                     <country key="IT"/>
+                  </geogName>
+                  <note>Appellé soit mont Gennaro soit mont Zappi</note>
+               </place>
+               
+               <place xml:id="Tyrrhénienne">
+                  <geogName>
+                     <geogFeat type="sea">Mer</geogFeat>
+                     <name>Tyrrhénienne</name>
+                  </geogName>
+               </place>
+               
+               <place xml:id="Prairie">
+                  <geogName>
+                     <geogFeat type="desert">prairie</geogFeat>
+                     <name>indienne</name>
+                     <bloc>L'Amérique du Nord</bloc>
+                  </geogName>
+               </place>
+               
+               <place xml:id="montsTusculans">
+                  <geogName>
+                     <geogFeat type="mountain">Monts</geogFeat>
+                     <name>Tusculans</name>
+                     <country key="IT"/>
+                  </geogName>
+               </place>
+               
+               <place xml:id="Tibre">
+                  <geogName>
+                     <geogFeat type="river">fleuve</geogFeat>
+                     <name>Tibre</name>
+                     <country key="IT"/>
+                  </geogName>
+               </place>
+               
+               <place xml:id="Sardaigne">
+                  <geogName>
+                     <geogFeat type="island">île</geogFeat>
+                     <name>Sardaigne</name>
+                  </geogName>
+               </place>               
+            </listPlace>
+         </settingDesc>
+      </profileDesc>
+   </teiHeader>
+   
+   <text>
+      <body>
+         <div1 n="11" type="chapter" source="#Presse-1857-01-19">
+            <div2 type="folio">
+               <pb n="1" facs="19_janvier_1.jpg"/>
+               <head><l>FEUILLETON DE <title ref="LaPresse">LA PRESSE</title><lb/>
+                  DU <date when="1857-01-19">LUNDI SOIR 19 JANVIER 1857</date>.<lb/>
+                  LA DANIELLA.</l></head>
+               <div3 type="text">
+                  <p>24 mars (Suite).</p>
+                  <p>Je vous ai bien assez promené aujourd'hui chez les morts. Nous serons forcés d'y retourner, car ici il n'y a pas moyen d'en sortir ; mais, pour aujourd'hui, il faut que je vous parle un peu des vivans.</p>
+                  <p><persName ref="#Medora"><addName type="honorific">Miss</addName><forename>Médora</forename></persName> est donc tout à fait persuadée que j'ai l'horreur du beau, et j'ai bien senti, dans ses paroles, que, la <persName ref="#Daniella"><forename>Daniella</forename></persName> aidant, <persName ref="#Benvenuto"><forename>Tartaglia</forename></persName> avait fait les affaires de mon camarade. On sait que je me défends d'adorer les charmes irrésistibles de <persName ref="#Medora"><addName type="honorific">miss</addName><forename>Médora</forename></persName>, et que j'ose trouver plus piquans ceux de la <persName ref="#Daniella" type="pseudo"><addName>soubrette</addName></persName>. La <persName ref="#Daniella" type="pseudo"><addName>soubrette</addName></persName> elle-même a l'air-de croire à mon amour, vu que je continue mon rôle et que je l'accable de complimens exagérés. <persName ref="#Brumieres"><forename>Brumières</forename></persName> pousse sa pointe et se nourrit d'espérances que je crois tout aussi folles que celles dont <persName ref="#Benvenuto"><forename>Tartaglia</forename></persName> persiste à vouloir m'enfiévrer. Cela fait une situation asséz piquante et qui m'égaierait si je pouvais secouer je ne sais quel manteau de glace tombé sur mes épaules et sur mon esprit depuis que je suis à <placeName ref="#Rome">Rome</placeName>.</p>
+                  <p>Il faut pourtant que je tâche de ne pas vous ennuyer aussi, et je veux vous dire quelle singulière conversation j'ai entendue avant-hier ; cela fera la suite, et, à certains égards, comme la contre-partie de celle que j'ai surprise à la <hi rend="italic">Réserve</hi>. Il paraît que je suis destiné à m'emparer, comme malgré moi, des secrets d'autrui. Ne me dites pas que je fais métier d'écouter aux portes ou au travers des cloisons. Vous allez voir comment la chose est arrivée.</p>
+                  <p>Pour vous la faire comprendre, il faut que je vous dise où et comment je suis logé.</p>
+                  <p>Il arrive quelquefois, dans ces grands palais d'<placeName ref="#Italie">Italie</placeName>, que les deux étages principaux sont la propriété de personnages différens. Il en a été ainsi dans celui où je me trouve, car ces deux habitations superposées ont été arrangées de manière à être bien distinctes l'une de l'autre. Nulle communication entre le premier et le second. Quand je vais dîner avec mes <persName ref="#Anglais">Anglais</persName>, j'ai à descendre jusque dans la rue pour remonter chez eux par une autre porte située sur une autre façade de l'édifice.</p>
+                  <p>Mais cette disposition particulière n'a pas été prise lors de la construction du palais, et il se trouve dans mon appartement, dans ma chambre même, une porte donnant sur un petit escalier qui aboutit à une impasse. C'était autrefois, sans doute, une des communications pour le service intérieur de la maison, et elle est parfaitement murée. J'avais exploré cet escalier le jour de mon installation, et, voyant qu'il n'aboutissait qu'à un gros pilier pris dans la maçonnerie, j'avais jugé parfaitement inutile d'en demander la clé.</p>
+                  <p>Avant-hier donc, vers six heures, comme je venais de rentrer pour faire un peu de toilette (car il est à peu pres impossible de songer à dîner dehors, <persName ref="#Harriet"><addName type="honorific">lady</addName><forename>Harriet</forename></persName> m'envoyant dire sept fois tous les matins qu'elle compte sur moi pour le soir), je fus surpris de trouver cette porte ouverte et le très remarquable berret basque de <placeName ref="#Benvenuto">Tartaglia</placeName> sur la première marche. Je l'appelai, il ne répondit pas ; mais il me sembla entendre remuer au fond de l'impasse, et j'y descendis dans l'obscurité. Quand je fus à la dernière marche, je sentis une main se poser sur mon bras. <said who="#Valreg" toWhom="#Benvenuto">— Que fais-tu la, coquin ?</said> lui dis-je, reconnaissant le sans-gêne de mon drôle. <said who="#Benvenuto" toWhom="#Valreg">— Chut ! chut ! tout bas !</said> me répondit-il d'un ton mystérieux. <said who="#Benvenuto" toWhom="#Valreg">Ecoutez-la, elle parle de vous !»</said> Et, m'attirant avec lui contre la muraille, il m'y retint par le bras, et j'entendis en effet prononcer mon nom.</p>
+                  <p>C'était la voix de <persName ref="#Medora"><addName type="honorific">miss</addName><forename>Médora</forename></persName> qui m'arrivait à l'oreille, comme au moyen d'un cornet acoustique, et qui disait : <said who="#Medora" toWhom="#Daniella">« Tu déraisonnes ; il te trouve laide, et c'est une coquetterie à mon adresse, de faire semblant... »</said> Un éclat de rire de la <persName ref="#Daniella"><forename>Daniella</forename></persName> interrompit la jeune lady.</p>
+                  <p>J'aurais dû n'en pas écouter davantage. Oh ! cela, j'en conviens, et voilà que, suivant la prédiction de <persName ref="#Brumieres"><forename>Brumières</forename></persName>, je subissais fatalement la mauvaise influence de cette canaille de <persName ref="#Benvenuto"><forename>Tartaglia</forename></persName> ; mais, croyez-vous qu'un homme de mon âge, quelque sérieux que l'ait rendu sa destinée, puisse entendre deux jolies femmes parler de lui, et résister à la tentation de prêter l'oreille ?</p>
+                  <p>La <persName ref="#Medora"><forename>Médora</forename></persName> avait, à son tour, interrompu le rire de la <persName ref="#Daniella"><forename>Frascatine</forename></persName> par une réprimande assez aigre. — <said who="#Medora" toWhom="#Daniella">Vous devenez sotte</said>, lui disait-elle, <said who="#Medora" toWhom="#Daniella">et prenez garde à vous ! Je ne souffrirais pas auprès de moi une fille qui aurait de vilaines aventures.</said> — <said who="#Daniella" toWhom="#Medora">Qu'est-ce que votre seigneurie appelle vilaines aventures ?</said> reprit vivement la <persName ref="#Daniella"><forename>Daniella</forename></persName>. <said who="#Daniella" toWhom="#Medora">Qu'y aurait-il de vilain à être aimée de ce jeune garçon ? Il n'est ni riche, ni noble, et il me conviendrait beaucoup mieux qu'à votre seigneurie.</said></p>
+                  <p>Là dessus, <persName ref="#Medora"><addName type="honorific">miss</addName><forename>Médora</forename></persName> fit une morale à sa femme de chambre, essayant de lui prouver qu'un homme de <hi rend="italic">ma condition</hi>, bien élevé comme je le paraissais, ne pouvait prendre l'amour au sérieux avec une grisette, avec une <hi rend="italic">artigiana</hi> de <placeName ref="#Frascati">Frascati</placeName> ; qu'elle serait trompée, abandonnée, et que, pour un moment de vanité satisfaite, elle aurait à pleurer tout le reste de ses jours.</p>
+                  <p>La <persName ref="#Daniella"><forename>Daniella</forename></persName> ne me semble pas fille à tant se désespérer, le cas échéant, car elle continua sur un ton très décidé : — Laissez-moi penser de tout cela ce que je veux, <persName ref="#Medora"><addName type="honorific">signora</addName></persName>, et renvoyez-moi si je me conduis mal. Le reste ne vous regarde pas, et les sentimens de ce jeune homme pour moi ne peuvent que vous divertir, puisqu'il vous déplaît encore plus que vous ne lui déplaisez.</p>
+                  <p>La discussion alla quelques momens ainsi ; mais d'aigre-douce elle devint tout à coup violente. <persName ref="#Medora"><addName type="honorific">Miss</addName><forename>Médora</forename></persName> se plaignait d'être mal coiffée (il paraît qu'on la coiffait pendant ce colloque) ; et comme la <persName ref="#Daniella"><forename>Daniella</forename></persName> assurait avoir fait de son mieux et aussi bien qu'à l'ordinaire, l'autre s'emporta, lui dit qu'elle le faisait exprès, et, s'étant apparemment décoiffée, elle donna l'ordre de recommencer. Il y eut des larmes de la <persName ref="#Daniella"><forename>Daniella</forename></persName>, car, après un peu de silence, <persName ref="#Medora" type="pseudo"><addName>l'Anglaise</addName></persName> reprit : « Allons, sotte, pourquoi pleures-tu ? — Vous ne m'aimez plus, dit l'autre. Non ! depuis que ce jeune homme est ici, vous n'êtes plus la même : vous avez du dépit, et je vous dis, moi, que vous l'aimez.</p>
+                  <p>— Si je ne vous savais folle, répondit <persName ref="#Medora" type="pseudo"><addName>l'Anglaise</addName></persName> irritée, je vous chasserais pour les impertinences que vous dites à tout propos ; mais je vous prends peur ce que vous êtes, une sauvage ! Allons, venez me mettre ma robe.</p>
+                  <p>Le bruit d'une porte, brusquement fermée, mit fin à cette querelle, et à mon péché de curiosité. En cherchant à retrouver l'escalier, je m'aperçus que <persName ref="#Benvenuto"><forename>Tartaglia</forename></persName> était toujours près de moi et qu'il n'avait pas dû perdre un mot de tout ceci. Je l'avais oublié. — Mais, insupportable espion, lui dis-je, pourquoi es-tu venu là, et comment ôses-tu te permettre de surprendre les secrets d'une maison qui t'accueille et te nourrit ?—En cela, répondit l'impudent personnage, nous sommes à deux de jeu, <hi rend="italic">mossiou ! </hi></p>
+                  <p>Fort bien, pensai-je, j'ai ce que je mérite ; et, pour ne pas faire avec lui le pendant de la scène des deux jeunes filles, je remis ma réplique à un autre moment. « Avant de remonter, me dit-il en me retenant avec son incorrigible familiarité, donnez-vous donc le plaisir de regarger la jolie invention ! » Et, frottant sur le mur une allumette qui prit feu pour nous éclairer suffisamment,<choice><sic></sic><corr> il</corr></choice> me montra, sous le renfoncement de la muraille, contre le pilier, une petite ouverture simulan<choice><sic><corr>t</corr></sic></choice> l'absence d'une brique. J'y collai mon œil, et ne vis pas le plus petit rayon de lumière.</p>
+                  <p>— Il n'y a rien là pour la <choice><sic></sic><corr>vue</corr></choice>, continua le cicérone de cet arcane domestique. Cela serpente dans le mur ; c'est arrange pour entendre. C'es<choice><sic></sic><corr>t</corr></choice> comme une <hi rend="italic">oreille de Denys</hi><choice><sic></sic><corr>.</corr></choice></p>
+                  <p>— Et l'invention est de toi ?</p>
+                  <p>— Oh ! non, certes ! Je n'étais pas né quand celui qui a imaginé ça est mort. C'était un cardinal jaloux de sa belle-sœur qui...</p>
+                  <p>Je remontai à ma chambre. J'ai peu de goût pour les historiettes scandaleuses de <persName ref="#Benvenuto"><forename>Tartaglia</forename></persName>. Vraies ou fausses, elles sont une satire si sanglante des mœurs des princes de l'Eglise, et en même temps, je le vois tellement dévot, que je me tiens avec lui sur mes gardes. Il est trop libre dans son langage pour n'être pas mouchard, et agent provocateur par dessus le marché.</p>
+                  <p>— <hi rend="italic">Mossiou ! mossiou ! </hi> dit-il en riant, quand j'eus refermé la porte en lui promettant beaucoup de coups de pied quelque part si je l'y reprenais ; vous ne feriez point cela ! Je suis un <persName ref="#Benvenuto" type="pseudo"><addName>Romain</addName></persName>, moi, et, au contraire de la <persName ref="#Medora"><forename>Médora</forename></persName>, qui fait l'indifférente parce qu'elle est fâchée, vous faites le fâché pour cacher que vous êtes content. J'espère que vous en êtes sur, à présent, que j'avais raison ? Vous êtes aimé ! Je ne me trompe jamais, moi ! Allez, allez, excellence, n'ayez pas peur<choice><sic></sic><corr>.</corr></choice> En écoutant souvent par-là, vous saurez comment il faut vous conduire, et je vois, à présent, que vous vous y prenez bien. Vous poussez au dépit pour faire pousser la passion. C'est bien, je suis content de vous ; mais vous, quand vous serez mylord, souvenez-vous du pauvre <persName ref="#Benvenuto"><forename>Tartaglia</forename></persName>.</p>
+                  <p>La-dessus, il sortit plus enchanté que jamais de lui-même.</p>
+                  <p>La première parole que j'adressai à <persName ref="#Medora"><forename>Médora</forename></persName>, au moment du dîner, fut une louange exhorbitante sur l'admirable arrangement de ses che-</p>
+               </div3>
+               <trailer>La reproduction est interdite. — Voir <title ref="LaPresse">la Presse</title> du <date when="1857-01-06">6</date> au <date when="1857-01-16">16 janvier</date>.</trailer>
+            </div2>
+            <div2 type="folio">
+               <pb n="2" facs="19_janvier_2.jpg"/>
+               <div3 type="text">
+                  <p>veux. J'étais, vous le voyez, dans une disposition d'esprit profondément scélérate ; mais il est certain que cette <persName ref="#Daniella"><forename>Daniella</forename></persName> a un goût exquis et qu'elle est pour moitié dans les triomphes de beauté de sa maîtresse. Pauvre fille, pensais-je, elle aussi, elle a des cheveux magnifiques qui sont peut-être plus à elle que ceux de sa maîtresse, et on ne les aperçoit que quand son mouchoir blanc se dérange.</p>
+                  <p>Dans la querelle que j'avais entendue, certes la provoquée, la méconnue et l'humiliée était cette pauvre <persName ref="#Daniella"><forename>Frascatine</forename></persName>. N'est-ce pas une chose contre nature pour une jeune fille d'avoir à s'effacer pour faire place à une autre, et de consacrer sa vie à ornér une idole en s'oubliant soi-même ?</p>
+                  <p>Et, parce que cette humble prêtresse de <persName ref="#Medora"><addName type="epithet">la déesse</addName> <forename>Médora</forename></persName> se permettait de croire à mes hommages, <persName ref="#Medora"><addName type="epithet">la déesse</addName></persName>, courrounée, l'avait menacée de la chasser de son sanctuaire !</p>
+                  <p>— Oui, mademoiselle, lui dis-je ; je ne vous ai jamais vue si bien arrangée.</p>
+                  <p>— Vous croyez ? répondit-elle du ton d'une femme au-dessus de ces misères ; je m'arrange toujours moi-même, et j'y mets si peu de temps !</p>
+                  <p>— Ah ! vraiment ? Vous avez l'adresse d'une fée et le goût d'une véritable artiste.</p>
+                  <p>Nous étions seuls ; elle en profita pour être coquette, et même un peu lourdement, comme le sont, je crois, les Anglaises quand elles s'en mêlent.</p>
+                  <p>— Ne faites donc pas semblant de me regarder, dit-elle ; je ne suis pas belle du tout dans votre opinion.</p>
+                  <p>— C'est vrai, répondis-je en riant ; vous êtes laide, mais bien coiffée, et j'envie votre habileté.</p>
+                  <p>— Ah ! Et pourquoi faire ? Voulez-vous donc natter et crêper vos cheveux ?</p>
+                  <p>— Je voudrais, dans l'occasion, savoir dire à un modèle comment il faut s'arranger. Est-ce que vous me permettez de regarder de près ?</p>
+                  <p>— Oui, regardez bien, et vous direz à la fameuse lavandière de l'<hi rend="italic">Aqua argentina</hi> de s'arranger comme moi. Ah ça, vous touchez à mes cheveux ? Savez-vous qu'on ne doit pas toucher à un seul cheveu d'une Anglaise ?</p>
+                  <p>— J'ai ce droit-là, ne vous semble-t-il pas ?</p>
+                  <p>— Vous ? et pourquoi donc, s'il vous plaît ?</p>
+                  <p>— Parce que, auprès de vous, je suis absolument calme et indifférent. Je suis le seul homme au monde capable d'une pareille imbécilité; donc, le seul homme qui ne puisse vous inquiéter et vous offenser en aucune façon.</p>
+                  <p>Il faut vous dire que j'avais senti, au toucher, en effleurant la grosse tresse de son chignon, la différence des cheveux morts avec les vivans, et cela me donna l'aplomb d'ajouter : « Croyez-vous qu'une femme qui n'aurait pas, comme vous, cette profusion de cheveux, pourrait imiter votre coiffure ? »</p>
+                  <p>— Je n'en sais rien, répondit-elle brusquement en me lançant un regard d'aversion où je crus lire clairement ces paroles : Vous savez que ma grosse tresse n'est pas à moi, parce que la <persName ref="#Daniella"><forename>Daniella</forename></persName> vous l'a dit, où qu'elle m'a coiffée de manière à rendre l'artifice visible.</p>
+                  <p>Elle sortit au bout d'un instant, et quand elle revint, je vis que l'on avait retouché à la coiffure. Je me repentis de mon impertinence : Ceci avait dû causer de nouvelles larmes à la pauvre <persName ref="#Daniella"><forename>Frascatine</forename></persName>.</p>
+                  <p>Je vois que je suis une pomme de discorde et que je dois cesser absolument de taquiner l'une ou l'autre. J'espère être quitte envers <persName ref="#Brumieres"><forename>Brumières</forename></persName> et m'être consciencieusement assuré l'antipathie de <persName ref="#Medora"><forename>Médora</forename></persName>. Les impertinences de la <persName ref="#Daniella" type="pseudo"><addName>soubrette</addName></persName> m'ont bien aidé à obtenir ce résultat ; mais les choses ne doivent pas aller plus loin, si je ne veux pas que l'orage retombe sur la pauvre fille.</p>
+                  <p>Savez-vous que je m'attache réellement à la personne la moins aimable de la maison ? Je ne parle pas de ce pauvre Buffalo qui a réellement beaucoup d'esprit et de savoir-vivre, mais au veritable chien galeux de la famille, à <persName ref="#LordB"><addName type="honorific">lord</addName><surname>B***</surname></persName>, le prosaïque, le petit esprit, le vulgaire, l'ignorant, l'homme nul, sens cœur et sans intelligence ? Car telle est l'opinion bien arrêtée désormais de <persName ref="#Harriet"><addName type="honorific">lady</addName><forename>Harriet</forename></persName> sur le compte de l'homme qu'elle a aimé jusqu'à la consomption, jusqu'à l'étisie. Quand je regarde cette courte et ronde personne, si bien guérie, si fraîche dans son soleil d'automne, et si aimable quand elle oublie de déplorer la médiocrité de son mari, je ne puis m'empêcher de m'effrayer à la pensée de l'amour. Est-ce donc là une des réactions inévitables des grandes passions, et faut-il absolument, quand on a été adoré, tomber dans ce mépris que les délicatesses d'un grand savoir-vivre peuvent à peine dissimuler chez <persName ref="#Harriet"><addName type="honorific">lady</addName><surname>B***</surname></persName>, mais qui nâvrent son orgueil comme un poison lent à dose continue ? Ceci ne serait rien encore, et vous me direz que je ne cours pas si grand risque d'inspirer de grandes passions. C'est bien mon avis ; mais si, par hasard, j'étais capable d'en ressentir une et d'obtenir, pour compagne de ma vie, une <hi rend="italic">femme adorée</hi>, serais-je donc condamné, un jour ou l'autre, à éprouver les angoisses et les écœuremens d'une désillusion comme celle dont <persName ref="#Harriet"><addName type="honorific">lady</addName><surname>B***</surname></persName> me montre le triste exemple ?</p>
+                  <p>Il y a une chose certaine, cependant : c'est que <persName ref="#Harriet"><addName type="honorific">lady</addName><surname>B***</surname></persName> est dans l'erreur sur le compte de son mari et sur le sien propre. <persName ref="#LordB"><addName type="honorific">Lord</addName><surname>B***</surname></persName> lui est infiniment supérieur sous tous les rapports sérieux. Sans avoir beaucoup d'instruction ni d'ésprit, il en a infiniment plus qu'elle ; et quant au caractère, il y a en lui une loyauté, une chasteté, une candeur, une philosophie, une générosité à la fois spontanées et raisonnées qui laissent bien loin derrière elles la douceur naturelle, la libéralité insouciante et la sensiblerie exaltée de sa femme.</p>
+                  <p>En somme, ce sont deux bonnes et honnêtes natures ; mais ici le mari a toutes les qualités essentielles de l'homme, et l'épouse n'a que les agrémens vulgaires de la femme. <persName ref="#Harriet"><addName type="honorific">Lady</addName><forename>Harriet</forename></persName> est un type que l'on voit partout ; <persName ref="#LordB"><addName type="honorific">lord</addName><surname>B***</surname></persName> est une précieuse originalité, et, dans le cercle obscur des vertus privées, une supériorité réelle.</p>
+                  <p>Au fond, je crois voir que ces deux âmes froissées ne se haïssent point, et que, tout en maudissant le joug qui les lie, elles ne le verraient pas se rompre sans douleur et sans effroi. Quelle est donc la cause du désenchantement de l'une et du découragement de l'autre ? Peut-être une fausse appréciation du monde extérieur, trop de dédain pour ce monde, de la part du mari, trop d'estime, de la part de la femme. Mais le dédain chez <persName ref="#LordB"><addName type="honorific">lord</addName><surname>B***</surname></persName> vient d'un excès de modestie personnelle, et, chez <persName ref="#Harriet"><addName type="honorific">lady</addName><forename>Harriet</forename></persName>, l'engouement résulte d'un fonds de vanité frivole.</p>
+                  <p>Voilà donc un ménage à jamais troublé, deux existences profondément gâtées et stériles, parce qu'une femme manque de bon sens, et un homme de présomption !</p>
+                  <p>Je suis arrivé vite à parler de cette plaie secrète avec <persName ref="#LordB"><addName type="honorific">lord</addName><surname>B***</surname></persName>. Son seul défaut, c'est de la laisser voir trop facilement. Il y a si longtemps qu'elle le ronge ! Peut-être aussi n'est-il pas né avec beaucoup d'énergie. Je lui ai appris que j'avais entendu sa conversation avec l'officier de marine, à la <hi rend="italic">Réserve</hi>, et que j'avais résolu de lui en garder le secret, même avant de prévoir que nous serions liés ensemble. Il m'en sait un gré infini et me tient pour un homme excessivement délicat. Il ne s'aperçoit pas que ma discrétion ne sert pas à grand chose, et que son attitude pénible, mélancolique et un peu railleuse auprès de sa femme fait deviner à tout le monde ce que je sais avec plus de détail seulement. Je me suis permis de le lui dire, et il m'a remercié de ma franchise, en promettant de s'observer ; mais <persName ref="#Harriet"><addName type="honorific">lady</addName><forename>Harriet</forename></persName> a, dans ses indignations rentrées, ou dans ses soupirs de compassion, quelque chose de si blessant pour lui, que je doute de l'utilité de mes humbles avis. Il semble d'ailleurs que tous deux soient tellement habitués à ne pas s'accepter, qu'ils périraient d'ennui et ne sauraient plus que faire d'eux-mêmes, si on arrivait à les mettre d'accord.</p>
+                  <p>La belle <persName ref="#Medora"><forename>Médora</forename></persName> devrait être un trait d'union entre eux ; mais il ne paraît pas qu'elle y ait jamais songé. C'est, je le crains bien, une tête éventée, sous son air grave et pensif. Elevée à travers champs par une mère voyageuse, ensuite orpheline et promenée de famille en famille, elle a fait acte d'indépendance dès sa majorité (car elle a déja quelque chose comme vingt-cinq ans) en choisissant sa, tante <persName ref="#Harriet"><forename>Harriet</forename></persName> pour chaperon définitif. Cette préférerce s'explique peut-être par des affinités de goûts et d'habitudes : amour de la parure, de la paresse et de l'apparence en toutes choses. Elles nous font l'honner d'appeler cela des goûts d'artiste. Et puis, <persName ref="#Medora" type="pseudo">la jeune personne</persName> a fait cause communé de plaintes et de dénigremens moqueurs avec <persName ref="#Harriet" type="pseudo">la chère tante</persName> contre <persName ref="#LordB" type="pseudo">le pauvre oncle</persName>. <persName ref="#LordB"><addName type="honorific">Lord</addName><surname>B***</surname></persName> en s'ouffre et le supporte. Elle a doublé ma part de blâme, dit-il, en apportant son contingent de remarques défavorables sur mon compte ; mais, d'autre part, elle a allégé mes ennuis en réussissant à faire rire <persName ref="#Harriet"><forename>Harriet</forename></persName>. C'est presque toujours à mes dépens ; mais du moment qu'elle rit, elle est un peu désarmée, et si on me méprise davantage, du moins on me laisse plus tranquille.</p>
+                  <p>Nous avons retiré, du journal de <persName ref="#Valreg"><forename>Jean</forename><surname>Valreg</surname></persName> quelques chapitres que nous nous proposons de publier à part. Les impressions de voyage l'emportaient trop sur le roman de sa vie, et, dans le choix que nous avons fait, nous désirons rétablir un peu l'équilibre auquel il ne songéait nullement à s'astreindre, en nous écrivant ses réflexions.</p>
+                  <p>Nous ne le suivrons donc ni dans les musées, ni dans les églises, ni dans les palais de <placeName ref="#Rome">Rome</placeName>, et c'est à <placeName ref="#Frascati">Frascati</placeName> que nous reprendons le fil de ses aventures.</p>
+               </div3>
+               <trailer><persName ref="ISNI-0000-0001-2130-9531"><forename>GEORGE</forename> <surname>SAND</surname></persName>.<lb/>(<hi rend="italic">La suite à <date when="1857-01-20">demain</date>.</hi>)</trailer>
+            </div2>
+         </div1>
+         <div1 n="12" type="chapter" source="#Presse-1857-01-20">
+            <div2 type="folio">
+               <pb n="1" facs="20_janvier_1.jpg"/>
+               <head><l>FEUILLETON DE <title ref="LaPresse">LA PRESSE</title><lb/>
+                  DU <date when="1857-01-20">MARDI SOIR 20 JANVIER 1857</date>.<lb/>
+                  LA DANIELLA.</l></head>
+               <div3 type="text">
+                  <p>Frascati, 31 mars.</p>
+                  <p>Je crains, mon ami, d'avoir été bien spleenétique ces jours derniers. Mon dégoût de <placeName ref="#Rome">Rome</placeName> s'est terminé par quelques jours de maladie. J'ai quitté <placeName ref="#Rome">Rome</placeName> et j'espère être mieux ici.</p>
+                  <p>La principale cause de mon mal, c'est le froid que j'ai éprouvé à <placeName ref="#Tivoli">Tivoli</placeName>. C'est bien beau, <placeName ref="#Tivoli">Tivoli</placeName> ! Je vous en parlerai un autre jour. Je sais que vous voulez, avant tout, que je vous parle de moi. La bonne <persName ref="#Harriet"><addName type="honorific">lady</addName><forename>Harriet</forename></persName> me voyant trembler la fièvre, cela m'avait pris comme un état convulsif en rentrant de cette course, a prétendu me soigner et me veiller elle-même. Son <persName ref="#LordB" type="pseudo">mari</persName> a eu beaucoup de peine à lui faire comprendre que cela me gênait et me contrariait au point de me rendre beaucoup plus malade, et c'est lui qui s'est chargé de moi. Mais avec quelle délicatesse et quelle bonté! Cet homme est réellement excellent ! Voyant que j'éprouvais, comme les chats, le besoin de me cacher d'être malade, il s'est caché lui-même derrière mon lit et ne s'est montré-que quand, battant la campagne, j'ai été hors d'état de comprendre la sollicitude dont j'étais l'objet.</p>
+                  <p>Je suis resté ainsi deux fois douze heures, avec un intervalle de douze heures entre les deux accès. Un bien habile et bien digne <persName ref="#Mayer"><roleName>médecin</roleName></persName> français m'a médicamenté à propos et sauvé, je crois, d'une plus grave maladie. Je dois dire que la petite <persName ref="#Daniella"><forename>Daniella</forename></persName> m'a montré aussi beaucoup d'intérêt, et que, dans mes momens lucides, je l'ai vue autour de moi, aidant <persName ref="#LordB"><addName type="honorific">lord</addName><surname>B***</surname></persName> à me dorlotter. Et puis, je ne l'ai plus revue, et même, lorsque je l'ai cherchée dans le palais pour lui faire mes remercîmens et mes adieux au moment du départ, il m'a été impossible de l'apercevoir.</p>
+                  <p>C'est qu'il faut vous dire que je me suis enfui à la sourdine. Aussitôt que j'ai été sur mes pieds, je me suis fait conseiller la campagne pour quelques jours, par le <persName ref="#Mayer"><roleName>docteur</roleName> <forename>Mayer</forename></persName>. J'aurais voulu retourner à <placeName ref="#Tivoli">Tivoli</placeName> ; mais l'air y est mauvais et c'est <placeName ref="#Frascati">Frascati</placeName> qui m'a été désigné. <persName ref="#LordB"><addName type="honorific">Lord</addName><surname>B***</surname></persName> voulait m'y amener et s'occuper de mon installation ; mais je déteste tant occuper les autres de ma sotte personne encore nerveuse et irascible comme on l'est quand on se sent affaibli, que je me suis sauvé avant le jour désigné pour le voyage. J'ai pris une petite voiture de louage et me voilà enfin libre, c'est-a-dire seul.</p>
+                  <p><placeName ref="#Frascati">Frascati</placeName> est à six lieues de <placeName ref="#Rome">Rome</placeName>, sur les <geogName ref="#montsTusculans" type="mountain">monts Tusculans</geogName>, petite chaîne volcanique qui fait partie du système des montagnes du <placeName ref="#Latium">Latium</placeName>. C'est encore la campagne de <placeName ref="#Rome">Rome</placeName>, mais c'est la fin de l'horrible désert qui, environne la capitale du monde catholique. Ici la terre cesse d'être inculte et la fièvre s'arrête. Il faut monter pendant une demi-heure, au pas des chevaux, pour atteindre la ligne d'air pur qui circule au-dessus de la région empestée de la plaine immense ; mais cet air pur est moins dû à l'élévation du sol qu'à la culture de la terre et à l'écoulément des eaux car <placeName ref="#Tivoli">Tivoli</placeName>, plus haut perché du double que <placeName ref="#Frascati">Frascati</placeName>, n'est pas à l'abri dé l'influence maudite.</p>
+                  <p>Aux approches de ces petites montagnes, quand on a laissé derrière soi les longs aqueducs ruines et trois ou quatre lieues de terrains ondulés, sans caractère et sans étendue pour le regard, on traverse de nouveau une partie de la plaine dont le nivellerent absolu présente enfin un aspect particulier et assez grandiose. C'est un lac de pâle verdure qui s'étend sur la gauche jusqu au pied du massif du <geogName ref="#montGennaro" type="mountain">mont Gennaro</geogName>. Au baisser du soleil, quand l'herbe fine et maigre de ce gigantesque pâturage est un peu échauffée par l'or du couchant et nuancée par les ombres portées des montagnes, le sentiment de la grandeur se révèle. Les petits accidens perdus dans ce cadre immense, les troupeaux et leurs chiens, seuls bergers qui, en de certaines parties de la steppe, osent braver la <hi rend="italic">malaria</hi> toute la journée, se dessinent et s'enlèvent en couleur avec une netteté comparable à celle des objets lointains sur la <geogName ref="#Tyrrhénienne">mer</geogName>. Au fond de cette nappe de verdure, si unie que l'on a peine à se rendre compte de son étendue, la base des <geogName ref="#montsTusculans" type="mountain">montagnes</geogName> semble nager dans une brume mouvante, tandis que leurs sommets se dressent immobiles et nets dans le ciel.</p>
+                  <p>Mais, en résumé, voici la critique qui se présente à mon esprit sur l'<hi rend="italic">effet</hi> bien souvent <hi rend="italic">manqué</hi> de la plaine de <placeName ref="#Rome">Rome</placeName>. Je dis <hi rend="italic">manqué</hi> par la nature sur l'œil des coloristes, et peut-être aussi sur l'âme des poètes. C'est un défaut de proportion dans les choses. La plaine est trop grande pour les montagnes. C'est une toile énorme avec un petit cadre. Il y a trop de ciel, et rien ne se <hi rend="italic">compose</hi> pour arrêter la pensée. C'est solennel et ennuyeux comme, en mer, un calme plat. Et puis, le genre de civilisation de ce pays-ci trouve moyen de tout gâter, même le désert. Puisque désert il y a, on voudrait le voir absolu, comme la <geogName ref="#Prairie" type="desert">prairie indienne</geogName> de <persName ref="#Cooper"><surname>Cooper</surname></persName>, dont los défauts naturels me semblent, d'après ses descriptions et les images que j'ai vues, assez comparables à ceux d'ici : de trop petites lignes de montagnes autour de trop grands espaces planes ; mais, au moins, la <geogName ref="#Prairie" type="desert">prairie indienne</geogName> exhale le parfum de la solitude, et l'œil du peintre qui voit, quoi qu'il fasse, à travers sa pensée, peut se reposer sur une sensation d'isolement complet et d'abandon solennel.</p>
+                  <p>Ici, n'espérez pas oublier les maux passés ou présens de l'état social. Cette plaine est parsemée de détails criards, d'une multitude de petites ruines antiques plus ou moins illustres ; de tours guelfes ou gibelines, très grandes de près, mais microscopiques sur cette vaste arène ; de cahuttes de paille, assez vastes pour abriter la nuit, les troupeaux errans pendant le jour, mais si petites à distance qu'on se demande si un homme peut y loger. Ce semis de détails toujours trop noirs ou trop blancs, selon l'heure et l'effet, est insupportable, et fait ressembler la plaine à un camp abandonné.</p>
+                  <p>Pardonnez-moi cette critique froide dans des lieux qu'on est forcé par l'usage de trouver admirables de lignes et ruisselans de poésie. Il faut bien que je vous explique pourquoi, sauf de rares instans où l'œil saisit un détail par hasard harmonieux (les troupeaux le sont toujours et partout) et une échappée entre deux buttes où, par bonheur, il n'y a pas de ruines <hi rend="italic">tranchantes</hi>, je m'écrie intérieurement : « Laide, trois fois laide et stupide la steppe de <placeName ref="#Rome">Rome</placeName> ! O mes belles landes plantureuses de <placeName ref="#Marche">la Marche</placeName> et du <placeName ref="#Bourdonnais">Bourbonnais</placeName>, personne ne parle de vous ! Voilà ce que c'est que de manquer de peste, de cadavres, de rapins et de <hi rend="italic">larmes de poète !</hi> »</p>
+                  <p>Enfin, ici, à <placeName ref="#Frascati">Frascati</placeName>, on entre dans un autre monde, un petit monde de jardins dans les rochers, qui, grâce au ciel, ne ressemble à rien, et vous fait comprendre les délices de la vie antique. Je tâcherai de vous en donner peu à peu l'idée ; car c'est un cachet bien tranché, et voici la première fois que je me sens vraiment loin de la <placeName ref="#France">France</placeName> et dans un pays nouveau. Pour aujourd'hui, je ne vous parlerai que de mon installation dans un domicile étrange comme le reste.</p>
+                  <p>Oubliez vite ce mot que je viens de dire : les <hi rend="italic">délices de la vie antique</hi>, en parlant de la villégiature romaine. La campagne qui m'environne mérite le titre de délicieuse ; mais la civilisation n'y a point de part pour le pauvre voyageur, et si les villas princières que je vois de ma fenêtre attestent un reste de magnificence, la population ouvrière et bourgeoise qui végète à leurs pieds ne me paraît pas s'en ressentir le moins du monde.</p>
+                  <p>La <placeName ref="#Frascati">ville</placeName> est pourtant jolie, non-seulement-par sa situation pittoresque et son côté de ruines romaines pendant sur le ravin, mais encore par elle-même. Elle est bien coupée et assez bién bâtie. On y arrive par une porte fortifée qui a du caractère ; la place bien italienne avec sa fontaine et sa basilique, annonce une importance, une étendue et une aisance qui n'existent pas : mais c'est comme cela dans toutes ces petites villes des Etats de l'Eglise : toujours une belle entrée, des monumens, quelques grandes maisons d'aspect seigneurial, quelque villa élégante ou quelque riche monastère ayant à vous montrer quelques tableaux de maîtres ; et puis, pour cité, une bourgade d'assez bon air, peuplée de guenilles et recélant à l'intérieur une misère sordide ou une insigne malpropreté.</p>
+                  <p>Je suis entré dans vingt maisons pour trouver un coin où je pusse m'établir, et Dieu sait qu'élevé dans un pauvre village de paysans, je n'apportais pas là de prétentions aristocratiques. J'ai trouvé partout ce contraste particulier à l'<placeName ref="#Italie">Italie</placeName>, un luxe de décoration inutile au milieu d'un dénuement absolu des choses les plus nécessaires à la vie. Dans la plus pauvre demeure, des sculptures et des peintures ; nulle part, à moins de prix exorbitans, un lit propre, une chaise avant ses quatre pieds, une fenêtre ayant toutes ses vitres. J'entrais dans ces maisons sur leur mine. Bien bâties et tenues fraîches, au dehors, par unair pur, elles annonçaient l'aisance. On est tout surpris de trouver, dès l'entrée, une sorte de vestibule voûté qui sert de latrines aux passans ; un escalier noir, étroit, avec des marches de deux pieds de haut, conduisant à un bouge infâme dont l'odeur vous fait reculer. Il est vrai que l'on a du marbre sous les pieds et des fresques telles quelles sur la tête. Le superflu est le nécessaire pour le Romain, et réciproquement.</p>
+                  <p>L'intérieur de l'<hi rend="italic">Albergo Nobile</hi> de <placeName ref="#Frascati">Frascati</placeName>, ancien palais vendu, et revendu, est une curiosité sous ce rapport. On traverse de vastes salles remplies de statues de marbre blanc, copiées sur des antiques. Dans un grand hémicycle qui sert de salon principal, il y a tout un Olympe d'une colossale bêtise. Ailleurs, ce sont des chambres représentant des paysages vus à travers des colonnes, des salles de bain fort agréables, avec des baignoires de marbre blanc sur le modèle des vasques antiques ; d'autres endroits plus se-</p>
+               </div3>
+               <trailer>La reproduction est interdite — Voir <title ref="LaPresse">la Presse</title> du <date when="1857-01-06">6</date> au <date when="1857-01-19">19 janvier</date>.</trailer>
+            </div2>
+            <div2 type="folio">
+               <pb n="2" facs="20_janvier_2.jpg"/>
+               <div3 type="text">
+                  <p>crets encore sont aussi en marbre blanc et décorés de sculptures. Puis, sur tout ce luxe de parois, des loques de tapis rapiécés, des fauteuils dépareillés, si gras et si vermoulus qu'on n'ose s'y asseoir ; des lits rembourrés d'ardoises, et, pour ornemens, des vases en cartonnage fané, rouge et or, contenant des bouquets de plumes de paon. Je m'imagine que le roi de <placeName ref="#Tombouctou">Tombouctou</placeName>, ou le grand chef des <name ref="#TêtesPlates">Têtes-Plates</name>, se pâmerait d'aise devant un pareil goût de décoration.</p>
+                  <p>Ce que j'ai efin trouvé de plus comfortable et de moins cher, c'est la <placeName ref="#villaP">villa Piccolomini</placeName>, où me voilà installé. C'est une grande raison carrée, largement bâtie, et qui, malgré son dénuement et son état de dégradation, mérite encore le titre de palais. Un perron, à marches brisées et disjointes, où il faut se baisser pour passer sous le linge qui sèche sur des cordes, donne entrée à un vestibule fermé, qui, rempli de fleurs, ferait une jolie serre. Au rez-de-chaussée s'étendent d'immenses appartemens voûtés, d'une élevation disproportionnée, et percés de petites fenêtres qui ont fermé jadis. Tout cela est disposé pour le frais en été; mais, au temps où nous sommes, c'est glacial. La fresque qui garnit tout, de la base au faîte de ces chambres-édifices, est d'un goût insupportable. Tantôt cela veut imiter les arabesques de <persName ref="#Raphael"><forename>Raphaël</forename></persName> et n'imite absolument rien ; tantôt d'atroces bonshommes nus, soi-disant divinités mythologiques, se tordent au plafond dans des poses terribles qui imitent grotesquement les <persName ref="#Michelangelo"><forename>Michel-Ange</forename></persName>. Les portes sont à fond d'or, rehaussées du chapeau et des cordelières du cardinalat, emblèmes qui vous poursuivent dans toutes ces demeures seigneuriales, puisqu'il n'est pas d'ancienne famille qui n'ait eu quelques ans de ses membres pourvus des hautes dignités de l'Eglise.</p>
+                  <p>Tout cela est sale, crevassé, moisi, terni d'une croûte de piqûres de mouches. De lourdes consoles dorées, à dessus de riches et laides mosaïques, et menaçantes de vétusté, garnissent les coins. Les glaces, de quinze pieds de haut, sont dépolies par l'humidité, et raccommodées, dans leurs brisures, avec des guirlandes de papier bleu. Le pavé de petites briques s'égraine sous les pieds. Les lits de fer, sans rideaux, disparaissent dans l'immensité. Le reste du mobilier est à l'avenant de cette misérable opulence. Une pauvre cheminée, pour tout un appartement de cinq pièces énormes, est à peu près inutile : on ne trouve de bois à achetér à aucun prix à <placeName ref="#Frascati">Frascati</placeName>, bien que ses collines soient couvertes d'une magnifique végétation ; mais tout cela appartient à trois ou quatre familles qui, à bon droit, respectent leurs antiques ombrages, et n'ont rien de superflu à vendre de leur bois mort. Le pauvre monde et les étrangers qui s'imaginent, comme moi, qu'il faut aller chercher un hiver doux et un printemps chaud en <placeName ref="#Italie">Italie</placeName>, se dégèlent le bout des doigts à la flamme rapide de quelques tiges de bambous pourris qui ne peuvent plus servir d'échalas aux vignes, et qu'on daigne leur vendre aussi cher que, chez nous, des bûches de Noël.</p>
+                  <p>Au dessus de ce rez-de-chaussée qui, sur l'autre face de la maison, bâtie à mi-côte, est un premier, s'étendent des appartemens encore plus vastes, habités en été par une famille suisse, aujourd'hui propriétaire de la <placeName ref="#villaP">villa Piccolomini</placeName>. Maintenant la maison serait entièrement vide sans la présence de quatre ouvriers qui viennent passer la nuit dans une cave, et celle de la <persName ref="#Mariuccia">Mariuccia</persName> qui demeure dans les combles.</p>
+                  <p>La <persName ref="#Mariuccia"><forename>Mariuccia</forename></persName>, c'est à dire la Marion ou la Mariotte (j'avoue que j'ai été influencé par cette similitude de nom avec la vieille gouvernante de mon oncle le curé), la <persName ref="#Mariuccia"><forename>Mariuccia</forename></persName> est la gardienne, la servante, la gouvernante, la cuisinière, le régisseur, le <hi rend="italic">factotum</hi> de cette grande habitation et des terres qui en dépendent. C'est un être assez singulier et assez remarquable : petite, maigre, plate, édentée, malpropre, hérissée, elle s'attribue <hi rend="italic">una trentasettesina</hi> d'années. J'ai été fort effrayé quand elle m'a offert de faire mon ménage et ma cuisine ; mais, en causant avec elle, j'ai reconnu qu'elle était excessivement intelligente, spirituelle même, et qu'elle me serait une ressource dans ces heures de spleen où l'on a besoin d'échanger quelques paroles, quelques idées avec une créature humaine, si bizarre qu'ellé soit.</p>
+                  <p>Elle m'a promené et piloté minutieusement dans <hi rend="italic">son</hi> palais en commençant par les plus <hi rend="italic">belles</hi> chambres et en finissant par les plus humbles, et débattant les prix avec une apreté énergique. Comme ces prix étaient, en somme, les plus raisonnables que j'eusse encore rencontrés, je ne les discutais que pour me divertir de sa physionomie et de sa parole, étourdissantes de vivacité. Je m'attendais à être rançonné comme partout et mis au pillage comme une proie acquise aux exigences de détail d'une servante-maîtresse. J'y étais tout résigné; mais, à peine eus-je-fait choix de mon gîte que les choses changèrent subitement. La <persName ref="#Mariuccia"><forename>Mariuccia</forename></persName>, soit qu'elle m'eût pris en amitié, soit qu'elle ait dans le caractère un fonds de bonté réelle, commença à me dorlotter comme si elle m'eût connu toute sa vie. Elle s'inquiéta de ma pâleur et se mit en quatre pour réchauffer ma chambre, défaire ma malle et préparer mon dîner. Elle apporta chez moi le meilleur fauteuil et les meilleurs matelas de la maison, fouilla l'appartement de ses maîtres pour me trouver des livres, une lampe, un tapis propre ; bouleversa le grenier pour me choisir un paravent, et courut au jardin pour me procurer quelques poignées de bois mort. Enfin, elle fixa le prix de ma consommation et celui de son service avec une discrétion remarquable.</p>
+                  <p>Cela m'a mis font à l'aise avec elle, non que je sois d'humeur à regimber contre le système d'exploitation auquel tout voyageur doit se soumettre en <placeName ref="#Italie">Italie</placeName> pour avoir la paix, mais parce qu'on se sent vraiment soulagé, dès que l'on peut voir dans un être de son espèce, quel qu'il soit, un égal sous le niveau de la probité.</p>
+                  <p>Me voilà donc dans un appartement situé au troisième ; un troisième qui, en raison de la hauteur des étages inférieurs, serait un sixième à <placeName ref="#Paris">Paris</placeName>. De là, j'ai la plus admirable vue qui se puisse imaginer. Je devrais dire les deux plus admirables vues, car les deux pièces que j'occupe, faisant l'angle de la maison, j'ai, d'un côté, la chaîne des montagnes depuis le Gennaro jusqu'au Soracte, la campagne de <placeName ref="#Rome">Rome</placeName> et <placeName ref="#Rome">Rome</placeName> tout entière visible à l'œil nu, malgré les treize milles de plaine qui m'en séparent à vol d'oiseau. De mon autre fenêtre, c'est plus beau encore : au-dela de la plaine immense, je vois la <geogName ref="#Tyrrhénienne">mer</geogName>, les rivages d'<placeName ref="#Ostie">Ostie</placeName>, la forêt de <placeName ref="#Laurentum">Laurentum</placeName>, l'embouchure du <geogName ref="#Tibre">Tibre</geogName>, et, au-dessus de tout cela, montant comme des spectres dans le ciel, les pâles silhouettes de la <geogName ref="#Sardaigne">Sardaigne</geogName>. C'est immense, comme vous voyez, et un rayon de soleil m'a fait paraître tout cela sublime. Je peux donc être ici languissant de santé, paresseux ou enfermé par la pluie. J'ai le vivre et le couvert assurés, une bonne femme pour me montrer de temps en temps une figure comique et bienveillante, deux pièces très basses, mais assez vastes, trop mal closes et trop haut perchées d'ailleurs pour n'être pas suffisamment aérées ; quelques livres propres à me renseigner sur le pays, et, n'eussé-je que quelques rares éclaircies de ciel, un des plus beaux spectacles que j'aie jamais contemplés.</p>
+                  <p>En ce moment, tenez, c'est splendide. Les montagnes sont d'un ton d'opale si fin et si doux qu'on les croirait transparentes. Tout ce côté de l'est se baigne dans des reflets d'une exquise suavité. Le couchant, au contraire, est embrasé d'un rouge terrible. Le soleil, abaissé sur l'horizon, éclate d'autant plus ardent que des masses opaques de nuages violets s'amoncèlent autour de lui. Les méandres marécageux du <geogName ref="#Tibre">Tibre</geogName> se dessinent en lignes étincelantes sur des masses de forêts encore plus violettes que le ciel. La mer est une nappe de feu, et, comme pour rendre le tableau plus lumineux et plus bizarre, une riche fontaine, située sur la terrasse d'une villa voisine, semble faire jaillir, aux premiers plans, une pluie d'or fondu qui se détache sur un fond de sombre verdure.</p>
+                  <p>Mes deux chambres sont, à mon sens, les moins laides de la maison, parce qu'elles n'ont aucune espèce d'ornement. C'est pour cela que la <persName ref="#Mariuccia"><forename>Mariuccia</forename></persName> me les a cédées au moindre prix possible, estimant que je devais être bien pauvre, puisque je consentais à me passer de fresques et de bustes. C'est peut-être aussi pour cela qu'elle m'apporte les meubles les plus propres de l'établissement, compensation qui lui paraît probablement moins sérieuse qu'à moi.</p>
+                  <p>Vous voilà tranquille sur le compte de votre serviteur et ami, qui, un peu fatigué de sa journée, va se coucher avec le soleil, comme les poules.</p>
+               </div3>
+               <trailer><persName ref="ISNI-0000-0001-2130-9531"><forename>GEORGE</forename> <surname>SAND</surname></persName>.<lb/>(<hi rend="italic">La suite à <date when="1857-01-21">demain</date>.</hi>)</trailer>
+            </div2>
+         </div1>
+      </body>
+   </text>
+</TEI>
